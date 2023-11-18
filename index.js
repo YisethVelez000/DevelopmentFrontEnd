@@ -25,8 +25,8 @@ app.get('/pedidos', (req, res) => {
     res.render('listarPedido')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/contacto', (req, res) => {
-    res.render('contacto')//Redireccionar hacia el archivo de hbs
+app.get('/agregarPedido', (req, res) => {
+    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('*', (req, res) => {
