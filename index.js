@@ -25,8 +25,8 @@ app.get('/pedidos', (req, res) => {
     res.render('listarPedido')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/contacto', (req, res) => {
-    res.render('contacto')//Redireccionar hacia el archivo de hbs
+app.get('/proveedores', (req, res) => {
+    res.render('proveedores')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('*', (req, res) => {
@@ -35,5 +35,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Listen to port: ${port}`)
+    console.log(`http://localhost:${port}`)
 })
