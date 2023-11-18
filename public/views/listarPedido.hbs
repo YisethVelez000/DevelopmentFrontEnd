@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styleListarPedido.css">
+    <link rel="stylesheet" href="../css/estilosgeneral.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+
+    <title>Listar Pedido</title>
+</head>
+<body>
+
+  {{> header title="Pedido"}}
+  
+        <div class="search">
+            
+            <form class="d-flex" role="search">
+                 <input class="form-control me-2 campo-search" type="search" placeholder="Buscar" aria-label="Search">    
+                  <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
+                  <button class="btn btn-outline-secondary boton-search" type="submit"><img src="/assets/img/search.ico" alt="search"  class="icono-search"></button>
+            </form>
+
+
+        </div>
+
+
+        <div class="">
+           <a href="/agregarPedido.html"><button type="button" class="btn btn-light more">+ Agregar</button> </a> 
+        </div>
+ 
+    <div class="container">
+
+            <div class="container2"> <!--Contenedor tipo encabezado, para el titulo-->
+
+                    <h2 class="fontTtitle mt-3">Listado Pedidos</h2>
+
+                    <table class="table table-orientacion ">
+                        <thead >
+                          <tr>
+                            <td scope="col" class="camposListar">Num Pedido</td>
+                            <td scope="col" class="camposListar">Nombre Cliente</td>
+                            <td scope="col" class="camposListar">Fecha Pedido</td>
+                            <td scope="col" class="camposListar">Forma Pago</td>
+                            <td scope="col" class="camposListar">Total Pago</td>
+                            <td scope="col" class="camposListar">Estado</td>
+                            <td scope="col" class="text-center camposListar">operaciones</td>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row" class="datosListar">4401</th>
+                            <td class="datosListar">Juan Muñoz</td>
+                            <td class="datosListar">09/11/2023</td>
+                            <td class="datosListar">Bancolombia</td>
+                            <td class="datosListar">145.000</td>
+                            <td class="datosListar">Revisión</td>
+                            <td class="icons"> 
+
+                               <!--EDITAR -->
+                                <div>  
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
+                                    
+                                   <!-- Modal  EDITAR -->
+                                   <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-ancha" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
+                                          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button> -->
+                                        </div>
+                                        <div class="modal-body">
+                                          <!-- Contenido de la modal -->
+
+                                          <div class="containerModal"> <!--Contenedor Padre-->
+
+
+                                            <form class="formularioInt">
+                                               <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+                                      
+                                                        <h1 class="textoh1">Pedidos</h1>
+                                      
+                                                      <div class="col-md-6">
+                                      
+                                                              <div class=" mb-4 form-group1">
+                                                                <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
+                                                                <input type="number" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1" placeholder="4401" disabled>
+                                                              </div>
+                                      
+                                                              <div class="  mb-4 form-group1">
+                                                                <label for="fechaPedido" class="form-label fontTtitle">Fecha Pedido <span class="text-danger">*</span></label>
+                                                                <input type="date" class="form-control" name="fechaPedido" id="fechaPedido">
+                                                                <div id="mensajeErrorFecha"></div>
+                                                              </div>
+                                      
+                                                              <div class=" mb-4 form-group1">
+                                                                <label for="exampleInputPassword1" class="form-label fontTtitle">Estado <span class="text-danger">*</span></label>
+                                                                <select class="form-select" aria-label="Default select example" required>
+                                                                  <option selected></option>
+                                                                  <option value="1">Pendiente</option>
+                                                                  <option value="2">Revisión</option>
+                                                                  <option value="3">Aprobado</option>
+                                                                  <option value="4">Rechazado</option>
+                                                                  <option value="5">Cancelado</option>
+                                                                </select>
+                                                              </div>
+                                      
+                                                      </div> 
+                                                      <div class="col-md-6">
+                                                        <div class=" mb-4 form-group1">
+                                                          <label for="nomCliente" class="form-label fontTtitle">Nombre Cliente <span class="text-danger">*</span></label>
+                                                          <input type="text" class="form-control btnInput" name="nomCliente" id="nomCliente" oninput="validarNombre()">
+                                                          <div id="mensajeError"></div>
+                                                        </div>
+                                      
+                                                        <div class=" mb-4 form-group1">
+                                                          <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago <span class="text-danger">*</span></label>
+                                                          <select class="form-select" aria-label="Default select example" required>
+                                                            <option selected></option>
+                                                            <option value="1">Bancolombia</option>
+                                                            <option value="2">Nequi</option>
+                                                            <option value="3">DaviPlata</option>
+                                                            <option value="4">Bbva</option>
+                                                            <option value="5">Pse</option>
+                                                          </select>
+                                                        </div>
+                                      
+                                                        
+                                                        <div class=" mb-4 form-group1">
+                                                          <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago <span class="text-danger">*</span></label>
+                                                          <input type="text" class="form-control btnInput" id="exampleInputPassword1">
+                                                        </div>
+                                                </div>  
+                                                  </div>
+                                                            </form>
+                                                       </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                          <button type="button" class="btn btnGuardar" onclick="modalClose()" data-bs-dismiss="modal">Guardar cambios</button>
+                                              
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                     <!--Modal 2-->
+                                       <!-- Modal -->
+                                       <!-- <div class="modal fade " id="modalG" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                          <div class="modal-content modal2 ">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="miModalLabel">Modal de Confirmación</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                             ¡Datos actualizados correctamente!
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button"  id="guardarBoton" class="btn btn-primary" data-bs-dismiss="modal">Si, confirmar</button>
+                                            
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div> -->
+                                  <!--Fin modal2-->
+
+
+
+                                  </div>
+
+                                 
+
+                         
+                               <script>
+                                document.getElementById('btnAbrirModalG').addEventListener('click', function () {
+                                  $('#modalG').modal('show');
+                                });
+
+                                function modalClose() {
+                                  $('#miModal').modal('hide');
+                                }
+                              
+                              </script> 
+                              
+                                  </div>
+
+
+                                    <!--BOTONES SIN LA MODAL, ASÍ SE USARÁN NORMALMENTE--> 
+                                    <div> 
+                                        <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a>
+                                    </div>
+
+                                        <div> 
+                                             <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a>
+                                        </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th scope="row" class="datosListar">4402</th>
+                            <td class="datosListar">Esteban Muñoz</td>
+                            <td class="datosListar">29/10/2023</td>
+                            <td class="datosListar">Nequi</td>
+                            <td class="datosListar">25.000</td>
+                            <td class="datosListar">Aprobado</td>
+                            <td class="icons"> 
+
+                              <!--EDITAR -->
+                              <div>  
+                                <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
+                                
+                               <!-- Modal  EDITAR -->
+                               <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <!-- Contenido de la modal -->
+
+                                      <div class="containerModal"> <!--Contenedor Padre-->
+
+
+                                        <form class="formularioInt">
+                                           <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+                                  
+                                                    <h1 class="textoh1">Pedidos</h1>
+                                  
+                                                  <div class="col-md-6">
+                                  
+                                                          <div class="mb-3 ">
+                                                            <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
+                                                            <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
+                                                          </div>
+                                  
+                                                          <div class="mb-4 ">
+                                                            <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
+                                                            <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
+                                                          </div>
+                                  
+                                                          <div class="mb-4 form-group">
+                                                            <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
+                                                            <select class="form-select" aria-label="Default select example">
+                                                              <option selected></option>
+                                                              <option value="1">Pendiente</option>
+                                                              <option value="2">Revisión</option>
+                                                              <option value="3">Aprobado</option>
+                                                              <option value="4">Rechazado</option>
+                                                              <option value="5">Cancelado</option>
+                                                            </select>
+                                                          </div>
+                                  
+                                                  </div> 
+                                                  
+                                                  
+                                  
+                                                  <div class="col-md-6">
+                                                    <div class="mb-3 form-group">
+                                                      <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
+                                                      <input type="email" class="form-control btnInput" id="exampleInputText1">
+                                                    </div>
+                                  
+                                                    <div class="mb-4 form-group">
+                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
+                                                      <input type="password" class="form-control" id="exampleInputPassword1">
+                                                    </div>
+                                  
+                                                    
+                                                    <div class="mb-4 form-group">
+                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
+                                                      <input type="password" class="form-control" id="exampleInputPassword1">
+                                                    </div>
+                                  
+                                            </div>  
+                                  
+                                  
+                                              </div>
+
+                                                        </form>
+                                                        
+                                                   </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                      <button type="button" class="btn btnGuardar">Guardar cambios</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              </div>
+
+
+
+                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
+                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row" class="datosListar">4403</th>
+                            <td class="datosListar" >Jhon Muñoz</td>
+                            <td class="datosListar">14/09/2023</td>
+                            <td class="datosListar">Bancolombia</td>
+                            <td class="datosListar">100.000</td>
+                            <td class="datosListar">Aprobado</td>
+                            <td class="icons"> 
+
+                                <!--EDITAR -->
+                                <div>  
+                                  <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
+                                  
+                                 <!-- Modal  EDITAR -->
+                                 <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <!-- Contenido de la modal -->
+
+                                        <div class="containerModal"> <!--Contenedor Padre-->
+
+
+                                          <form class="formularioInt">
+                                             <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+                                    
+                                                      <h1 class="textoh1">Pedidos</h1>
+                                    
+                                                    <div class="col-md-6">
+                                    
+                                                            <div class="mb-3 ">
+                                                              <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
+                                                              <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
+                                                            </div>
+                                    
+                                                            <div class="mb-4 ">
+                                                              <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
+                                                              <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
+                                                            </div>
+                                    
+                                                            <div class="mb-4 form-group">
+                                                              <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
+                                                              <select class="form-select" aria-label="Default select example">
+                                                                <option selected></option>
+                                                                <option value="1">Pendiente</option>
+                                                                <option value="2">Revisión</option>
+                                                                <option value="3">Aprobado</option>
+                                                                <option value="4">Rechazado</option>
+                                                                <option value="5">Cancelado</option>
+                                                              </select>
+                                                            </div>
+                                    
+                                                    </div> 
+                                                    
+                                                    
+                                    
+                                                    <div class="col-md-6">
+                                                      <div class="mb-3 form-group">
+                                                        <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
+                                                        <input type="email" class="form-control btnInput" id="exampleInputText1">
+                                                      </div>
+                                    
+                                                      <div class="mb-4 form-group">
+                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                                      </div>
+                                    
+                                                      
+                                                      <div class="mb-4 form-group">
+                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                                      </div>
+                                    
+                                              </div>  
+                                    
+                                    
+                                                </div>
+
+                                                          </form>
+                                                          
+                                                     </div>
+
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btnGuardar">Guardar cambios</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                </div>
+
+
+                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
+                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
+                            </td>
+
+                          </tr>
+
+                          <tr>
+                            <th scope="row" class="datosListar">4404</th>
+                            <td class="datosListar" >Katherin Berrio</td>
+                            <td class="datosListar">09/11/2023</td>
+                            <td class="datosListar">Nequi</td>
+                            <td class="datosListar">150.000</td>
+                            <td class="datosListar">Revisión</td>
+                            <td class="icons"> 
+
+                                <!--EDITAR -->
+                                <div>  
+                                  <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
+                                  
+                                 <!-- Modal  EDITAR -->
+                                 <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <!-- Contenido de la modal -->
+
+                                        <div class="containerModal"> <!--Contenedor Padre-->
+
+
+                                          <form class="formularioInt">
+                                             <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+                                    
+                                                      <h1 class="textoh1">Pedidos</h1>
+                                    
+                                                    <div class="col-md-6">
+                                    
+                                                            <div class="mb-3 ">
+                                                              <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
+                                                              <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
+                                                            </div>
+                                    
+                                                            <div class="mb-4 ">
+                                                              <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
+                                                              <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
+                                                            </div>
+                                    
+                                                            <div class="mb-4 form-group">
+                                                              <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
+                                                              <select class="form-select" aria-label="Default select example">
+                                                                <option selected></option>
+                                                                <option value="1">Pendiente</option>
+                                                                <option value="2">Revisión</option>
+                                                                <option value="3">Aprobado</option>
+                                                                <option value="4">Rechazado</option>
+                                                                <option value="5">Cancelado</option>
+                                                              </select>
+                                                            </div>
+                                    
+                                                    </div> 
+                                                    
+                                                    
+                                    
+                                                    <div class="col-md-6">
+                                                      <div class="mb-3 form-group">
+                                                        <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
+                                                        <input type="email" class="form-control btnInput" id="exampleInputText1">
+                                                      </div>
+                                    
+                                                      <div class="mb-4 form-group">
+                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                                      </div>
+                                    
+                                                      
+                                                      <div class="mb-4 form-group">
+                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                                      </div>
+                                    
+                                              </div>  
+                                    
+                                    
+                                                </div>
+
+                                                          </form>
+                                                          
+                                                     </div>
+
+
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btnGuardar">Guardar cambios</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                </div>
+
+
+
+                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
+                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th scope="row" class="datosListar align-baseline">4405</th>
+                            <td class="datosListar" >Sandra Benitez</td>
+                            <td class="datosListar">15/10/2023</td>
+                            <td class="datosListar">Nequi</td>
+                            <td class="datosListar">20.000</td>
+                            <td class="datosListar">Cancelado</td>
+                            <td class="icons"> 
+
+                               <!--EDITAR -->
+                               <div>  
+                                <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
+                                
+                               <!-- Modal  EDITAR -->
+                               <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <!-- Contenido de la modal -->
+
+                                      <div class="containerModal"> <!--Contenedor Padre-->
+
+
+                                        <form class="formularioInt">
+                                           <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+                                  
+                                                    <h1 class="textoh1">Pedidos</h1>
+                                  
+                                                  <div class="col-md-6">
+                                  
+                                                          <div class="mb-3 ">
+                                                            <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
+                                                            <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
+                                                          </div>
+                                  
+                                                          <div class="mb-4 ">
+                                                            <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
+                                                            <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
+                                                          </div>
+                                  
+                                                          <div class="mb-4 form-group">
+                                                            <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
+                                                            <select class="form-select" aria-label="Default select example">
+                                                              <option selected></option>
+                                                              <option value="1">Pendiente</option>
+                                                              <option value="2">Revisión</option>
+                                                              <option value="3">Aprobado</option>
+                                                              <option value="4">Rechazado</option>
+                                                              <option value="5">Cancelado</option>
+                                                            </select>
+                                                          </div>
+                                  
+                                                  </div> 
+                                                  
+                                                  
+                                  
+                                                  <div class="col-md-6">
+                                                    <div class="mb-3 form-group">
+                                                      <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
+                                                      <input type="email" class="form-control btnInput" id="exampleInputText1">
+                                                    </div>
+                                  
+                                                    <div class="mb-4 form-group">
+                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
+                                                      <input type="password" class="form-control" id="exampleInputPassword1">
+                                                    </div>
+                                  
+                                                    
+                                                    <div class="mb-4 form-group">
+                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
+                                                      <input type="password" class="form-control" id="exampleInputPassword1">
+                                                    </div>
+                                  
+                                            </div>  
+                                  
+                                  
+                                              </div>
+
+                                                        </form>
+                                                        
+                                                   </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                      <button type="button" class="btn btnGuardar">Guardar cambios</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              </div>
+
+
+
+                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
+                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <nav aria-label="Page navigation example" class="pag">
+                        <ul class="pagination justify-content-end">
+                          <li class="page-item disabled">
+                            <a class="page-link">&laquo;</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">&raquo;</a>
+                          </li>
+                        </ul>
+                      </nav>
+
+            </div>
+            
+    </div>
+
+{{> footer }}
+
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<script src="../js/listarPedido.js"></script>
+<script src="../js/validarFormularioPedido.js"></script>
+</body>
+</html>
