@@ -29,11 +29,19 @@ app.get('/agregarPedido', (req, res) => {
     res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
 })
 
+app.get('/insumos', (req, res) => {
+    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/categoriaInsumos', (req, res) => {
+    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
+})
+
 app.get('*', (req, res) => {
     //res.sendFile(__dirname+'/public/views/404.hbs')
     res.render('404')//Redireccionar hacia el archivo de blade
 })
 
 app.listen(port, () => {
-    console.log(`Listen to port: ${port}`)
+    console.log(`http://localhost:${port}`)
 })
