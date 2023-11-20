@@ -26,7 +26,31 @@ app.get('/pedidos', (req, res) => {
 })
 
 app.get('/proveedores', (req, res) => {
-    res.render('proveedores')//Redireccionar hacia el archivo de hbs
+    res.render('proveedores')
+})//Redireccionar hacia el archivo de hbs
+
+app.get('/empleados', (req, res) => {
+    res.render('empleados')
+})//
+app.get('/fichatecnica', (req, res) => {
+    res.render('fichatecnica')
+})//
+app.get('/editarfichatecnica', (req, res) => {
+    res.render('editarfichatecnica')
+})/
+app.get('/listarfichatecnica', (req, res) => {
+    res.render('listarfichatecnica')
+})/
+app.get('/agregarPedido', (req, res) => {
+    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/insumos', (req, res) => {
+    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/categoriaInsumos', (req, res) => {
+    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('*', (req, res) => {
