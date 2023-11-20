@@ -53,6 +53,18 @@ app.get('/categoriaInsumos', (req, res) => {
     res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
 })
 
+app.get('/cotizacion', (req, res) => {
+    res.render('cotizacion')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/listarCotizacion', (req, res) => {
+    res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/vistaCotizacion', (req, res) => {
+    res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
+})
+
 app.get('*', (req, res) => {
     //res.sendFile(__dirname+'/public/views/404.hbs')
     res.render('404')//Redireccionar hacia el archivo de blade
