@@ -1,104 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/estilosgeneral.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Inicio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel = "stylesheet" href="../css/estilosindex.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
+  <header class = "header">
+    <div class = "menu container">
+        <a href="#" class="logo">
+        <img src="/assets/img/Dosi logo.png" alt="Nombre del logo">
+    </a>
+    
+          <input type = "checkbox" id="menu"/>
+          <label for="menu">
+            <img src="" class="menu-icono" alt="">
+          </label>
+          <nav class="navbar">
+            <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Nosotros</a></li>
+              <li><a href="#">Registrarse</a></li>
+              <li><a href="#">Iniciar Sesión</a></li>
 
+            </ul>
+        </nav>
 
-<div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <div class="col-md-3 mb-2 mb-md-0">
-        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-          <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-      </div>
+            </ul>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2">Features</a></li>
-        <li><a href="#" class="nav-link px-2">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
-      </ul>
-
-      <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
-      </div>
-    </header>
-  </div>
- <!-- Sección de banner con imagen y mensaje de bienvenida -->
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Bienvenidos a nuestra tienda de ropa</h1>
-            <p class="lead text-muted">Aquí encontrarás la mejor selección de ropa para hombres, mujeres y niños.</p>
-            <p>
-                <a href="#" class="btn btn-primary my-2">Ver productos</a>
-                <a href="#" class="btn btn-secondary my-2">Ver promociones</a>
-            </p>
+          </nav>
         </div>
-    </section>
-    <!-- Sección de productos con tarjetas de productos -->
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://via.placeholder.com/300x200.png?text=Producto+1" alt="Producto 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Producto 1</h5>
-                            <p class="card-text">Descripción del producto 1.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
-                                </div>
-                                <small class="text-muted">$19.99</small>
-                            </div>
-                        </div>
-                    </div>
+    <div class = "header-content container">
+      <h1>Bienvenidos a Dosi</h1>
+      <p>
+        Ofrecemos con amor y dedicación los mejores 
+        servicios de estampación y personalización de prendas.
+
+      </p>
+      <a href="#" class="btn-1">¡Comencemos!</a>
+    </div>
+
+  </header>
+
+<section class="Dosi">
+  <img class="Dosi-img" src="" alt="">
+  <div class="Dosi-content container">
+    <h2>¿Quienes somos?</h2>
+    <p class="txt-p">
+      Somos una empresa dedicada con pasión y dedicación a la personalización
+       de prendas de vestir. Nos enorgullece ofrecer a nuestros clientes la posibilidad
+        de expresar su estilo único a través de estampados cuidadosamente seleccionados
+         y técnicas de personalización de alta calidad. Nos esforzamos por convertir cada
+          prenda en una obra de arte, adaptándonos a los gustos y preferencias individuales
+           de nuestros clientes.
+    </p>
+
+   </section>
+
+<main class="services">
+  <div class="services-content container">
+    <h2>Nuestros Servicios</h2>
+
+    <div class="services-group">
+      <div class=" "services-1>
+        <h3>Estampación y Personalización</h3>
+         
+
+      </div>
+
+    </div>
+    <div id="productosCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card shadow-sm" style="max-width: 100%;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 20%;">
+            <img src="/assets/img/Buso bratz(producto1) (1).png" alt="Producto 1" class="img-fluid mx-auto">
+            <div class="card-body">
+              <h5 class="card-title">Buso bratz</h5>
+              <p class="card-text">Buso en tela poliéster, talla única.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://via.placeholder.com/300x200.png?text=Producto+2" alt="Producto 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Producto 2</h5>
-                            <p class="card-text">Descripción del producto 2.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
-                                </div>
-                                <small class="text-muted">$29.99</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://via.placeholder.com/300x200.png?text=Producto+3" alt="Producto 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Producto 3</h5>
-                            <p class="card-text">Descripción del producto 3.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
-                                </div>
-                                <small class="text-muted">$39.99</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <small class="text-muted">$90.000</small>
+              </div>
             </div>
+          </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card shadow-sm" style="max-width: 100%;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 30%;">
+            <img src="/assets/img/Conjunto adidas(producto2).png" alt="Producto 2" class="img-fluid mx-auto">
+            <div class="card-body">
+              <h5 class="card-title">Conjunto adidas</h5>
+              <p class="card-text">Conjunto adidas original (camiseta y sudadera).</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
+                </div>
+                <small class="text-muted">$100.000</small>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card shadow-sm" style="max-width: 100%;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 30%;">
+             <img src="/assets/img/Buso rick y morty(producto3)3.png" alt="Producto 3" class="img-fluid mx-auto">
+             <div class="card-body ">
+              <h5 class="card-title">Buso rick y morty</h5>
+              <p class="card-text">Buso en tela de algodón, talla única.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary text-center">Ver detalles</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Agregar al carrito</button>
+                </div>
+                <small class="text-muted">$150.000</small>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Puedes agregar más elementos de carousel-item según sea necesario -->
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </div>
+    
+
+    <a href="#" class="btn btn-primary my-2">Ver catálogo</a>
+
+  
+  <!-- Sección de promociones con imagen y mensaje promocional -->
+
+
+  </div>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <footer style="background-color: #080c3a; color: white; padding: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <span>2023 software inc</span>
+            <span>Todos los derechos reservados</span>
+        </div>
+        <div>
+            <span style="margin-right: 10px;">Contáctanos:</span>
+            <a href="https://www.facebook.com" target="_blank"><img src="/assets/img/facebook-logo-1-2.png" alt="Facebook" style="width: 30px;"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="/assets/img/instagram-logo.png" alt="Instagram" style="width: 30px;"></a>
+            <a href="https://wa.me/XXXXXXXXXX" target="_blank"><img src="/assets/img/whatsapp-logo-1-1.png" alt="WhatsApp" style="width: 30px;"></a>
         </div>
     </div>
-    <!-- Sección de promociones con imagen y mensaje promocional -->
-    
-</html>
+</footer>
+
+</body>
+</html> 
