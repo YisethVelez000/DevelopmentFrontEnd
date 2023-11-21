@@ -74,7 +74,7 @@ app.get('/listarCotizacion', (req, res) => {
 
 app.get('/vistaCotizacion', (req, res) => {
     res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
-
+})
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
 })//Redireccionar hacia el archivo de hbs
