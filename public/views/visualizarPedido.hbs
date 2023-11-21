@@ -11,7 +11,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
   </style>
 
-    <title>Agregar Pedido</title>
+    <title>Visualizar Pedido</title>
 </head>
 <body class="bodybg">
 
@@ -24,7 +24,7 @@
       <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
 
              <a href="/pedidos"><img src="../img/return.ico" class="img-return"></a> 
-              <h1 class="textoh1">Registrar Pedido</h1>
+              <h1 class="textoh1">Visualizar Pedido</h1>
                
                <div class="row"> 
                 
@@ -37,31 +37,31 @@
 
                      <div class="col-md-12 mt-5 mb-5 form-group">
                        <label for="nomCliente" class="form-label fontTtitle">Nombre Cliente <span class="text-danger">*</span></label>
-                       <input type="text" class="form-control btnInput" name="nomCliente" id="nomCliente" oninput="validarNombre()">
+                       <input type="text" class="form-control btnInput" name="nomCliente" id="nomCliente" disabled placeholder="Juan Muñoz">
                        <div id="mensajeError"></div>
                      </div>
 
                      <div class="mb-5 form-group">
                         <label for="email" class="form-label fontTtitle">Email <span class="text-danger">*</span></label>
-                        <input type="email" class="form-control btnInput" name="email" id="email"  oninput="validarCorreo()">
+                        <input type="email" class="form-control btnInput" name="email" id="email"  disabled placeholder="papomunoz06@gmail.com">
                         <div id="mensajeErrorCorreo"></div>
                       </div>
 
                       <div class="mb-5 form-group">
                         <label for="celular" class="form-label fontTtitle">Celular <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control btnInput" name="celular" id="celular"  oninput="validarCelular()">
+                        <input type="text" class="form-control btnInput" name="celular" id="celular"  disabled placeholder="3016590931">
                         <div id="mensajeErrorCelular"></div>
                       </div>
 
                       <div class="mb-5 form-group">
                         <label for="direccion" class="form-label fontTtitle">Dirección <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control btnInput" name="direccion" id="direccion" oninput="validarDireccion()">
+                        <input type="text" class="form-control btnInput" name="direccion" id="direccion" disabled placeholder="cra 57a #67f-48">
                         <div id="mensajeErrorDireccion"></div>
                       </div>
 
                       <div class="mb-5 form-group">
                         <label for="apto" class="form-label fontTtitle">Casa/Apto/Oficina <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control btnInput" name="apto" id="apto"  oninput="validarApto()">
+                        <input type="text" class="form-control btnInput" name="apto" id="apto"  disabled placeholder="apto 12">
                          <div id="mensajeErrorApto"></div>
                       </div>
 
@@ -91,18 +91,18 @@
 
                         <div class="p-1 mb-6 form-group">
                             <label for="numPedido" class="form-label fontTtitle">Núm Pedido <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="numPedido" id="numPedido"  oninput="validarNumPedido()">
+                            <input type="text" class="form-control btnInput2" name="numPedido" id="numPedido"  disabled placeholder="4401">
                             <div id="mensajeErrorApto"></div>
                          </div>
 
                          <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Total Pedido <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" disabled placeholder="170.000">
                          </div> 
 
                          <div class="p-1 mb-6 form-group">
                             <label for="Estado" class="form-label fontTtitle">Estado <span class="text-danger">*</span></label>
-                            <select class="form-select selector" aria-label="Default select example" required>
+                            <select class="form-select selector" aria-label="Default select example" disabled>
                               <option selected></option>
                               <option value="1">Pendiente</option>
                               <option value="2">Revisión</option>
@@ -114,17 +114,17 @@
 
                           <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Dirección <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" disabled placeholder="carrera 57a #37-21">
                          </div> 
 
                          <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Fecha Pedido <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" disabled placeholder="09/11/2023">
                          </div> 
 
                          <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Fecha Entrega <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" disabled placeholder="21/11/2023">
                          </div> 
 
                     </div>
@@ -135,7 +135,7 @@
 
                    <div class="p-2 mb-6  form-group">
                     <label for="nomInsumo" class="form-label fontTtitleAggPedido2">Forma Pago  <span class="text-danger">*</span></label>
-                    <select class="form-select selectPagos" aria-label="Default select example" required>
+                    <select class="form-select selectPagos" aria-label="Default select example" disabled>
                       <option selected></option>
                       <option value="1">Bancolombia</option>
                       <option value="2">Nequi</option>
@@ -157,7 +157,7 @@
                         <form>
                             <div class="form-control">
                               <label for="customFile" class="form-label" >Seleccionar Imagen</label>
-                                <input type="file" class="form-control visually-hidden" id="customFile" accept="image/*" onchange="mostrarImagenSeleccionada(this)" required>
+                                <input type="file" class="form-control visually-hidden" id="customFile" accept="image/*" onchange="mostrarImagenSeleccionada(this)" disabled>
                               
                             </div>
                         </form>
@@ -184,12 +184,12 @@
 
                      <div class="p-2 mb-6  form-group">
                       <label for="nomInsumo" class="form-label fontTtitleAggPedido">Cantidad <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required >
+                      <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required placeholder="1" disabled>
                    </div> 
 
                    <div class="p-2 mb-6  form-group">
                     <label for="nomInsumo" class="form-label fontTtitleAggPedido">Talla <span class="text-danger">*</span></label>
-                    <select class="form-select" aria-label="Default select example" required>
+                    <select class="form-select" aria-label="Default select example" disabled>
                       <option selected></option>
                       <option value="1">S</option>
                       <option value="2">M</option>
@@ -200,7 +200,7 @@
                  </div> 
 
                       <div class="contenedorImg">
-                          <img src="" alt="Img Producto" class="imgProducto">
+                          <img src="../img/hoodie.png" alt="hoodie" class="imgProducto">
 
                       </div>
 
@@ -230,45 +230,45 @@
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <th scope="row" class="datosListar">---</th>
-                                        <td class="datosListar">---</td>
-                                        <td class="datosListar">---</td>
-                                        <td class="datosListar">---</td>
-                                        <td class="datosListar">---</td>
+                                        <th scope="row" class="datosListar">Camisa</th>
+                                        <td class="datosListar">Chaqueta</td>
+                                        <td class="datosListar">10</td>
+                                        <td class="datosListar">S</td>
+                                        <td class="datosListar">145.000</td>
                                         <td class="icons"> 
             
                                                 <!--BOTONES SIN LA MODAL, ASÍ SE USARÁN NORMALMENTE--> 
-                                                  <div> 
-                                                <a href=""> <img src="../img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
-                                           </div>
+                                                <div> 
+                                                    <a href=""> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
+                                               </div>
+                                                <div> 
+                                                    <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a>
+                                                </div>
             
-                                            <div>  
-                                                 <a href="/agregarPedido.html"> <img src="../img/show.ico" alt="" class="iconos-listar img-show"></a>
-                                             </div>
-            
-                                             <div>  
-                                                 <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar img-delete"></a>
-                                             </div>
+                                                    <div> 
+                                                         <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a>
+                                                    </div>
+                                        </td>
                                       </tr>
             
                                       <tr>
-                                        <th scope="row" class="datosListar">---</th>
-                                        <td class="datosListar">---</td>
-                                        <td class="datosListar">---</td>
-                                        <td class="datosListar">---</td>
-                                        <td class="datosListar">---</td>
+                                        <th scope="row" class="datosListar">0002</th>
+                                        <td class="datosListar">Pantalon</td>
+                                        <td class="datosListar">20</td>
+                                        <td class="datosListar">L</td>
+                                        <td class="datosListar">25.000</td>
                                         <td class="icons"> 
             
                                             <div> 
-                                                <a href=""> <img src="../img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
+                                                <a href=""> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
                                            </div>
             
                                             <div>  
-                                                 <a href="/agregarPedido.html"> <img src="../img/show.ico" alt="" class="iconos-listar img-show"></a>
+                                                 <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a>
                                              </div>
             
                                              <div>  
-                                                 <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar img-delete"></a>
+                                                 <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a>
                                              </div>
                                         </td>
             

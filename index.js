@@ -37,13 +37,22 @@ app.get('/fichatecnica', (req, res) => {
 })//
 app.get('/editarfichatecnica', (req, res) => {
     res.render('editarfichatecnica')
-})/
+})
 app.get('/listarfichatecnica', (req, res) => {
     res.render('listarfichatecnica')
-})/
+})
 app.get('/agregarPedido', (req, res) => {
     res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
 })
+
+app.get('/editarPedido', (req, res) => {
+    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/visualizarPedido', (req, res) => {
+    res.render('visualizarPedido')//Redireccionar hacia el archivo de hbs
+})
+
 
 app.get('/insumos', (req, res) => {
     res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
