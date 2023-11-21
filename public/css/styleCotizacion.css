@@ -167,17 +167,7 @@ h1 {
 }
 
 
-footer{
-    display: flex;
-    flex-direction: row;
-    margin-top: 200px;
-    width: 100%;
-    background-color: rgb(6, 6, 32);
-    justify-content: space-around;
-    height: 60px;
-    color:#f2f2f2;
 
-}
 
 
 .btnInput {
