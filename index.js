@@ -52,6 +52,10 @@ app.get('/insumos', (req, res) => {
 app.get('/categoriaInsumos', (req, res) => {
     res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
 })
+app.get('/visualizarficha', (req, res) => {
+    res.render('visualizarficha')//Redireccionar hacia el archivo de hbs
+})
+
 
 app.get('*', (req, res) => {
     //res.sendFile(__dirname+'/public/views/404.hbs')
