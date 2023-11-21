@@ -132,6 +132,10 @@ app.get('/insumos', (req, res) => {
 app.get('/categoriaInsumos', (req, res) => {
     res.render('registrarCatInsumos')
 })
+app.get('/visualizarficha', (req, res) => {
+    res.render('visualizarficha')//Redireccionar hacia el archivo de hbs
+})
+
 
 app.get('/cotizacion', (req, res) => {
     res.render('cotizacion')
