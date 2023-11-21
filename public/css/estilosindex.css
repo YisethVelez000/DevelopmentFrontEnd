@@ -24,7 +24,7 @@ font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)),
-        url('/assets/img/Background\ DOSI.jpg');
+        url('../img/Background\ DOSI.jpg');
     background-size: cover;
     background-position: center;
     color: white; /* Set text color to be visible against the background */
@@ -206,7 +206,7 @@ font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)
-    ), url('/assets/img/DOSI\ SERVICES.jpg');
+    ), url('../img/DOSI\ SERVICES.jpg');
     background-size: cover;
     background-position: center;
     color: white;
