@@ -1,0 +1,28 @@
+.color-table {
+    border-collapse: collapse;
+    margin-top: -35px;
+  }
+  
+  .color-table th, .color-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .color-preview {
+    width: 20px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .row2{ /* Contenedor Hijo */
+    width: 650px;
+    height:1200px;
+    margin-left: 400px;
+    margin-top: -1040px;
+   background-color: rgb(245, 245, 245);
+   border-radius: 10px 0 10px 0;
+
+}
