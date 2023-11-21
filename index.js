@@ -65,7 +65,7 @@ app.get('/listarCotizacion', (req, res) => {
 
 app.get('/vistaCotizacion', (req, res) => {
     res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
-
+})
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
 })//Redireccionar hacia el archivo de hbs
@@ -73,6 +73,10 @@ app.get('/proveedores', (req, res) => {
 app.get('/empleados', (req, res) => {
     res.render('empleados')
 })//
+app.get('/visualizarempleado', (req, res) => {
+    res.render('visualizarempleado')
+})//
+
 app.get('/fichatecnica', (req, res) => {
     res.render('fichatecnica')
 })//

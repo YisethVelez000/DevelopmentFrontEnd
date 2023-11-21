@@ -20,12 +20,12 @@
 
 
   <title>Empleados</title>
-   
+
 
 
 
 <body class="bodybg">
-    {{> header title="Empleados"}}
+  {{> header title="Empleados"}}
 
 
   <div class="container"> <!--Contenedor Padre-->
@@ -39,7 +39,8 @@
         <div class="col-md-6">
 
           <div class="mb-3 form-group">
-            <label for="nombrecom" class="form-label fontTtitle">Nombre Completo <span class="text-danger">*</span></label>
+            <label for="nombrecom" class="form-label fontTtitle">Nombre Completo <span
+                class="text-danger">*</span></label>
             <input type="text" class="form-control btnInput" name="nombrecom" id="nombrecom" oninput="validarNombre()">
             <div id="mensajeError" class="mensajeError"></div>
           </div>
@@ -52,24 +53,27 @@
 
           <div class="mb-4 form-group">
             <label for="Celular" class="form-label fontTtitle">Celular<span class="text-danger">*</span></label>
-            <input type="text" class="form-control btnInput" name="Celular" id="Celular"oninput="validarCelular()">
+            <input type="text" class="form-control btnInput" name="Celular" id="Celular" oninput="validarCelular()">
             <div id="mensajeErrorCelular" class="mensajeError"></div>
           </div>
 
           <div class="mb-4 form-group">
             <label for="Contrasena" class="form-label fontTtitle">Contraseña<span class="text-danger">*</span></label>
-            <input type="password" class="form-control btnInput" name="Contrasena" id="Contrasena"oninput="validarContraseña()">
+            <input type="password" class="form-control btnInput" name="Contrasena" id="Contrasena"
+              oninput="validarContraseña()">
             <div id="mensajeErrorContraseña" class="mensajeError"></div>
           </div>
 
 
           <div class="mb-4 form-group">
-            <label for="confirmacionContraseña" class="form-label fontTtitle">Confirmación de contraseña<span class="text-danger">*</span></label>
-            <input type="password" class="form-control btnInput" name="confirmacionContraseña"  id="confirmacionContraseña"oninput="validarContraseña()">
+            <label for="confirmacionContraseña" class="form-label fontTtitle">Confirmación de contraseña<span
+                class="text-danger">*</span></label>
+            <input type="password" class="form-control btnInput" name="confirmacionContraseña"
+              id="confirmacionContraseña" oninput="validarContraseña()">
             <div id="mensajeErrorContraseña" class="mensajeError"></div>
           </div>
 
-         
+
 
         </div>
         <div class="col-md-6 form2">
@@ -84,45 +88,52 @@
           </select>
 
           <div class="mb-4 form-group">
-            <label for="fechanacimiento" class="form-label fontTtitle">Fecha de nacimiento<span class="text-danger">*</span></label>
-            <input type="date" class="form-control btnInput" name="fechanacimiento" id="fechanacimiento"oninput="validarfechanacimiento()">
-            <div id="mensajeErrorFechaNacimiento" class="mensajeError"></div> 
+            <label for="fechanacimiento" class="form-label fontTtitle">Fecha de nacimiento<span
+                class="text-danger">*</span></label>
+            <input type="date" class="form-control btnInput" name="fechanacimiento" id="fechanacimiento"
+              oninput="validarfechanacimiento()">
+            <div id="mensajeErrorFechaNacimiento" class="mensajeError"></div>
           </div>
 
           <div class="mb-4 form-group">
-            <label for="fechacontratacion" class="form-label fontTtitle">Fecha de contratación<span class="text-danger">*</span></label>
-            <input type="date" class="form-control btnInput"   name="fechacontratacion" id="fechacontratacion"oninput="validarFechas()">
-            <div id="mensajeErrorFechas" class="mensajeError"></div> 
+            <label for="fechacontratacion" class="form-label fontTtitle">Fecha de contratación<span
+                class="text-danger">*</span></label>
+            <input type="date" class="form-control btnInput" name="fechacontratacion" id="fechacontratacion"
+              oninput="validarFechas()">
+            <div id="mensajeErrorFechas" class="mensajeError"></div>
           </div>
 
 
           <div class="mb-4 form-group">
-            <label for="fechaterminacion" class="form-label fontTtitle">Fecha de Terminacion<span class="text-danger">*</span></label>
-            <input type="date" class="form-control btnInput"  name="fechaterminacion" id="fechaterminacion"oninput="validarFechas()">
+            <label for="fechaterminacion" class="form-label fontTtitle">Fecha de Terminacion<span
+                class="text-danger">*</span></label>
+            <input type="date" class="form-control btnInput" name="fechaterminacion" id="fechaterminacion"
+              oninput="validarFechas()">
             <div id="mensajeErrorFechas2" class="mensajeError"></div>
           </div>
 
           <div class="mb-4 form-group">
-    <label for="Correo" class="form-label fontTtitle">Correo Electrónico<span class="text-danger">*</span></label>
-    <input type="email" class="form-control btnInput" name="Correo" id="Correo" oninput="validarCorreo()">
-    <div id="mensajeErrorCorreo" class="mensajeError"></div>
-</div>
+            <label for="Correo" class="form-label fontTtitle">Correo Electrónico<span
+                class="text-danger">*</span></label>
+            <input type="email" class="form-control btnInput" name="Correo" id="Correo" oninput="validarCorreo()">
+            <div id="mensajeErrorCorreo" class="mensajeError"></div>
+          </div>
 
-          
-         
+
+
 
         </div>
 
 
       </div>
-      
+
       <button type="button" class="btn btnGuardar">Guardar</button>
       <button type="button" class="btn btnCancelar">Cancelar</button>
-      <button type="button" class="btn btnGuardar"  onclick="mostrarModal()">Guardar</button>
+      <button type="button" class="btn btnGuardar" onclick="mostrarModal()">Guardar</button>
       <button type="button" class="btn btnCancelar" data-bs-toggle="modal" data-bs-target="#mimodal">
         Cancelar
       </button>
-     <!--modal para asegurarse de guardar-->
+      <!--modal para asegurarse de guardar-->
       <div class="modal" tabindex="-1" id="miModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -134,7 +145,7 @@
               <p>Tu Formulario ha sido guardado exitosamente</p>
             </div>
             <div class="modal-footer">
-             
+
               <button type="button" class="btn btn-primary " id="btnAceptar">Aceptar</button>
             </div>
           </div>
@@ -156,7 +167,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" id="btnCancelar" onclick="realizarAccionCancelar()">Confirmar</button>
+          <button type="button" class="btn btn-primary" id="btnCancelar"
+            onclick="realizarAccionCancelar()">Confirmar</button>
         </div>
       </div>
     </div>
@@ -166,8 +178,8 @@
     <form class="d-flex" role="search">
       <input class="form-control me-2 campo-search" type="search" placeholder="Buscar" aria-label="Search">
       <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
-      <button class="btn btn-outline-secondary boton-search" type="submit"><img
-          src="../img/search.ico" alt="search" class="icono-search"></button>
+      <button class="btn btn-outline-secondary boton-search" type="submit"><img src="../img/search.ico" alt="search"
+          class="icono-search"></button>
     </form>
 
 
@@ -210,18 +222,20 @@
             <!--BOTONES DE OPERACION-->
             <td class="icons">
               <div>
-                <button type="button" class="btn"> <img src="../img/pencil.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/pencil.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/show.ico" alt=""
-                    class="iconos-listar"> </button>
+                <a href="/visualizarempleado">
+                  <button type="button" class="btn">
+                    <img src="../img/show.ico" alt="" class="iconos-listar">
+                  </button>
+                </a>
               </div>
 
               <div>
-                <button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#modaleliminar"  > <img src="../img/delete.ico" alt=""
-                    class="iconos-listar" id="eliminar"></button>
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modaleliminar"> <img
+                    src="../img/delete.ico" alt="" class="iconos-listar" id="eliminar"></button>
               </div>
 
               <div class="form-check form-switch checkeo">
@@ -273,7 +287,8 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary" id="btnCancelar" onclick="realizarAccionCancelar()">Confirmar</button>
+                  <button type="button" class="btn btn-primary" id="btnCancelar"
+                    onclick="realizarAccionCancelar()">Confirmar</button>
                 </div>
               </div>
             </div>
@@ -292,18 +307,15 @@
             <!--BOTONES DE OPERACION-->
             <td class="icons">
               <div>
-                <button type="button" class="btn"> <img src="../img/pencil.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/pencil.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/show.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/show.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
-                    class="iconos-listar"></button>
+                <button type="button" class="btn"> <img src="../img/delete.ico" alt="" class="iconos-listar"></button>
               </div>
 
               <div class="form-check form-switch checkeo">
@@ -324,18 +336,15 @@
             <!--BOTONES DE OPERACION-->
             <td class="icons">
               <div>
-                <button type="button" class="btn"> <img src="../img/pencil.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/pencil.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/show.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/show.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
-                    class="iconos-listar"></button>
+                <button type="button" class="btn"> <img src="../img/delete.ico" alt="" class="iconos-listar"></button>
               </div>
 
               <div class="form-check form-switch checkeo">
@@ -371,8 +380,8 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="../js/validacionesempleados.js"></script>
-{{> footer }}
- 
+  {{> footer }}
+
 
 </body>
 
