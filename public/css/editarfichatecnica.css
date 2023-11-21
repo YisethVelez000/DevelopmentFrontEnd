@@ -1,0 +1,11 @@
+
+.btnLimpiar {
+    position: absolute;
+    display: flex ;
+    margin-left: 200px;
+    margin-top: 150px;
+    background-color: #1f2553;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}

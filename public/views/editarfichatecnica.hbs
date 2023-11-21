@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilostablacolores.css">
+    <link rel="stylesheet" href="../css/fichatecnica.css">
+    <link rel="stylesheet" href="../css/estilosgeneral.css">
+    <link rel="stylesheet" href="../css/editarfichatecnica.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  </style>
+
+  <title>Agregar Pedido</title>
+</head>
+
+<body class="bodybg">
+ {{> header title="Ficha tecnica"}}
+ 
+
+
+
+
+  <div class="containerAgregarPedido"> <!--Contenedor Padre-->
+
+
+    <form class="formularioInt">
+      <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+
+      <a href="/listarPedido.html"><img src="/assets/img/return.ico" class="img-return"></a>
+      <h1 class="textoh1">Ficha Tecnica Producto</h1>
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+
+          <div class="mb-3 form-group">
+
+          </div>
+
+          <div class="col-md-12 mt-5 mb-5 form-group">
+            <label for="nombreProducto" class="form-label fontTtitle">Nombre Producto <span
+                class="text-danger">*</span></label>
+            <input type="text" class="form-control btnInput" name="nombreProducto" id="nombreProducto" value="camiseta antioqueña" readonly
+              oninput="validarNombre()">
+            <div id="mensajeError"></div>
+          </div>
+
+          <div class="mb-5 form-group">
+            <label for="costoproducto" class="form-label fontTtitle">Costo Del Producto <span
+                class="text-danger">*</span></label>
+            <input type="number" class="form-control btnInput" name="costoproducto" id="costoproducto" value="10000" readonly
+              oninput=" validarCostoProducto()">
+            <div id="mensajeErrorCostoproducto"></div>
+          </div>
+
+          <div class="mb-5 form-group">
+            <label for="cantidadstock" class="form-label fontTtitle">Cantidad en Stock <span
+                class="text-danger">*</span></label>
+            <input type="number" class="form-control btnInput" name="cantidadstock" id="cantidadstock" value="20" readonly
+              oninput="validarStock()">
+            <div id="mensajeErrorcantidadstock"></div>
+          </div>
+
+          <div class="form-check form-switch checkeo">
+            <label for="estado"> Activo/Inactivo </label>
+            <input class="form-check-input " type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          </div>
+
+
+          <div class="row4 gridAggPedido">
+            <div class="insumos">
+              <div>
+                <label for="nuevoColor "class="textoh2 mt-3" >Selecciona un color:</label>
+                <input type="color"  id="nuevoColor">
+                <button type="button"  class=" eliminar-btn" onclick="agregarColor(event)">Agregar Color</button>
+  
+            </div>
+            
+            <div id="tablaColoresBody">
+                <!-- Filas dinámicas se agregarán aquí -->
+            </div>
+            </div>
+          </div>
+
+       
+
+
+
+
+          
+
+          <div class="">
+            <a href="">
+              <button type="button" class="btn btnLimpiar" onclick="habilitarEdicion()">Editar</button>
+              <button type="button" class="btn btnCancelar">Cancelar</button>
+              <button type="button" class="btn btnGuardar"  onclick="mostrarModal()">Guardar Cambios</button>
+             
+              <button type="button" class="btn btnCancelar" data-bs-toggle="modal" data-bs-target="#mimodal">
+              
+                
+               
+               </a>
+          </div>
+          <!--modal de guardar-->
+          
+
+          <!--MODAL DE CANCELAR-->
+    
+        </form>
+        <div class="modal" tabindex="-1" id="miModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Tu Formulario ha sido guardado exitosamente</p>
+              </div>
+              <div class="modal-footer">
+               
+                <button type="button" class="btn btn-primary " id="btnAceptar">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal" tabindex="-1" id="mimodal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirmación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>¿Estás seguro de que deseas cancelar?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnCancelar" onclick="realizarAccionCancelar()">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search">
+
+
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="row2">
+
+
+            <div class="mb-6 form-group">
+              <label for="numPedido" class="form-label textoh3"></label>
+            </div>
+
+            <div class="row-cols-2 row3">
+
+              <div class="p-1 mb-6 form-group">
+                <label for="Estado" class="form-label fontTtitle">Talla <span class="text-danger">*</span></label>
+                <select class="form-select selector" aria-label="Default select example">
+                  <option selected>L</option>
+                  <option value="1">S</option>
+                  <option value="2">M</option>
+                  <option value="3">L</option>
+                  <option value="4">XL</option>
+                </select>
+              </div>
+
+              <div class="p-1 mb-6 form-group">
+                <label for="costototal" class="form-label fontTtitle">Costo Total <span
+                    class="text-danger">*</span></label>
+                <input type="number" class="form-control btnInput2" name="costototal" id="costototal" value="30000" readonly
+                  oninput="validarcostoTotal()">
+                  <div id="mensajeErrorcostototal"></div>
+              </div>
+
+              <div class="p-1 mb-6  form-group">
+                <label for="precioventa" class="form-label fontTtitle">Precio Total Venta <span
+                    class="text-danger">*</span></label>
+                <input type="number" class="form-control btnInput2" name="precioventa" id="precioventa " value="50000" readonly  oninput="validarprecioventa()">
+                <div id="mensajeErrorprecioventa"></div>
+              </div>
+
+            </div>
+
+            <!--Incio rowTransaccion-->
+            <div class="rowTransaccion gridAggPedido2">
+
+
+              <div class="p-2 mb-6  form-group">
+                <label for="nomInsumo" class="form-label fontTtitleAggPedido2">Imagen Producto <span
+                    class="text-danger">*</span></label>
+              </div>
+
+
+              <!-- Contenedor para la vista previa de la imagen -->
+              <div class="contenedorImg2" id="contenedorImg2">
+                <img id="imgComprobante" class="imgComprobante" src="/FRONTENDDEVELOPMENT/assets/img/polito.jpg" alt="Imagen por defecto">
+
+              </div>
+
+              <!--Comprobante de pago-->
+              <div class="contenedorArchivo">
+                <form>
+                  <div class="form-control">
+                    <label for="customFile" class="form-label">Cambiar Imagen</label>
+                    <input type="file" class="form-control visually-hidden" id="customFile" accept="image/*"
+                      onchange="mostrarImagenSeleccionada(this)" required>
+
+                  </div>
+                </form>
+
+                
+
+              </div>
+
+
+
+
+            </div>
+
+            <!--Fin de rowTransaccion-->
+
+
+
+
+            <div class="row5">
+
+              <!--LISTADO DE PRODUCTOS-->
+              <div class="containerListarAgg">
+
+                <div class="container2"> <!--Contenedor tipo encabezado, para el titulo-->
+
+
+                  <div class="form-group insumos ">
+                    <label for="insumos" class="textoh2 mt-3">Lista de insumos asociados<span class="text-danger">*
+                      </span></label>
+                    <ul id="insumos" class="list-group">
+                      <div class="search">
+
+                        <form class="d-flex" role="search">
+                          <input class="form-control me-2 campo-search" type="search" placeholder="Buscar"
+                            aria-label="Search">
+                          <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
+                          <button class="btn btn-outline-secondary boton-search" type="submit"><img
+                              src="/FRONTENDDEVELOPMENT/assets/img/search.ico" alt="search"
+                              class="icono-search"></button>
+                        </form>
+
+
+                      </div>
+
+                      <li class="list-group-item">
+                        <input type="text" class="form-control" placeholder="Insumo" value="tela " readonly>
+                        <input type="txt" class="form-control" placeholder="Cantidad" value="4 metros" readonly>
+                        <input type="number" class="form-control" placeholder=" Precio Insumo" value="15000" readonly>
+
+                        <button type="button" class="btn btncolor" onclick="eliminarInsumo(this)">Eliminar</button>
+
+                      </li>
+                    </ul>
+                    <button type="button" class="btn btncolor" onclick="agregarInsumo()">Agregar insumo</button>
+                    <p id="mensajeErrorAgregarInsumo" class="text-danger">debes asosciar al menos un insumo </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+      <!-- <button type="button" class="btn btnLimpiar">Limpiar</button>
+         <button type="button" class="btn btnCancelar">Cancelar</button>
+         <button type="button" class="btn btnGuardar" onclick="validarFormulario()">Guardar cambios</button> -->
+    </form>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Enlaza el archivo JavaScript externo -->
+  
+  <script src="../js/validacionfichatecnica.js"></script>
+  <script src="../js/validacioncolores.js"></script>
+  <script>
+      function habilitarEdicion() {
+        // Obtener todos los elementos de entrada del formulario
+        var elementosInput = document.querySelectorAll('.btnInput');
+
+        // Iterar sobre los elementos y habilitar la edición
+        elementosInput.forEach(function (elemento) {
+            elemento.removeAttribute('readonly');
+        });
+
+        // Mostrar el botón de cancelar y ocultar el botón de editar
+        document.querySelector('.btnEditar').style.display = 'none';
+    } 
+</script>
+
+</body>
+
+
+
+</html>
