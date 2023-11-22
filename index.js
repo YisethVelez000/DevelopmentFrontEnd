@@ -30,6 +30,9 @@ app.get('/login', (req, res) => {
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
 })//Redireccionar hacia el archivo de hbs
+app.get('/visualizarproveedor', (req, res) => {
+    res.render('visualizarproveedor')
+})//Redireccionar hacia el archivo de hbs
 
 app.get('/empleados', (req, res) => {
     res.render('empleados')

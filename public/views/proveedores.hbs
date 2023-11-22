@@ -18,8 +18,8 @@
 
   <title>Proveedores</title>
 </head>
- {{> header title="Proveedores"}}
-   <!--NAVBAR-->
+{{> header title="Proveedores"}}
+<!--NAVBAR-->
 
 
 <body class="bodybg">
@@ -37,7 +37,7 @@
 
           <div class="mb-3 form-group">
             <label for="nombreProveedor" class="form-label fontTtitle">Nombre del Proveedor<span class="text-danger">*
-                </span></label>
+              </span></label>
             <input type="text" class="form-control btnInput" name="nombreProveedor" id="nombreProveedor"
               oninput="validarNombreProveedor()">
             <div id="mensajeError" class="mensajeError"></div>
@@ -45,14 +45,14 @@
 
           <div class="mb-4 form-group">
             <label for="Nit" class="form-label fontTtitle">Nit<span class="text-danger">*
-                </span></label>
+              </span></label>
             <input type="text" class="form-control btnInput" name="Nit" id="Nit" oninput="validarNIT()">
             <div id="mensajeErrorNit" class="mensajeError"></div>
           </div>
 
           <div class="mb-4 form-group">
             <label for="Dirección" class="form-label fontTtitle">Dirección<span class="text-danger">*
-                </span></label>
+              </span></label>
             <input type="text" class="form-control btnInput" name="Dirección" id="Dirección"
               oninput="validarDireccion()">
             <div id="mensajeErrorDireccion" class="mensajeError"></div>
@@ -66,7 +66,7 @@
         <div class="col-md-6">
           <div class="mb-3 form-group">
             <label for="Correo" class="form-label fontTtitle">Correo<span class="text-danger">*
-                </span></label>
+              </span></label>
             <input type="text" class="form-control btnInput" name="Correo" id="Correo" oninput="validarCorreo()">
             <div id="mensajeErrorCorreo" class="mensajeError"></div>
           </div>
@@ -98,7 +98,7 @@
 
       </div>
 
-     
+
       <button type="button" class="btn btnGuardar" onclick="mostrarModal()">Guardar</button>
       <button type="button" class="btn btnCancelar" data-bs-toggle="modal" data-bs-target="#mimodal">cancelar</button>
       <!--modal para asegurarse de guardar-->
@@ -122,37 +122,38 @@
     </form>
 
   </div>
-    <!--modal para cancelar-->
-    <div class="modal" tabindex="-1" id="mimodal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Confirmación</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>¿Estás seguro de que deseas cancelar?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" id="btnCancelar" onclick="realizarAccionCancelar()">Confirmar</button>
-          </div>
+  <!--modal para cancelar-->
+  <div class="modal" tabindex="-1" id="mimodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro de que deseas cancelar?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="btnCancelar"
+            onclick="realizarAccionCancelar()">Confirmar</button>
         </div>
       </div>
     </div>
+  </div>
 
 
-    <div class="search">
+  <div class="search">
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2 campo-search" type="search" placeholder="Buscar" aria-label="Search">
-        <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
-        <button class="btn btn-outline-secondary boton-search" type="submit"><img
-            src="../img/search.ico" alt="search" class="icono-search"></button>
-      </form>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2 campo-search" type="search" placeholder="Buscar" aria-label="Search">
+      <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
+      <button class="btn btn-outline-secondary boton-search" type="submit"><img src="../img/search.ico" alt="search"
+          class="icono-search"></button>
+    </form>
 
 
-    </div>
+  </div>
   <!--LISTADOS-->
 
   <div class="containerListar">
@@ -161,7 +162,7 @@
 
       <h2 class="textoh1 mt-3">Listado Provedores</h2>
 
-     
+
       <!-- <hr class="lineaHorizontal"> -->
 
       <table class="table table-orientacion">
@@ -189,19 +190,21 @@
             <!--BOTONES DE OPERACION-->
             <td class="icons">
               <div>
-                <button type="button" class="btn"> <img src="../img/pencil.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/pencil.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/show.ico" alt=""
-                    class="iconos-listar"> </button>
+                <a href="/visualizarproveedor">
+                  <button type="button" class="btn">
+                    <img src="../img/show.ico" alt="" class="iconos-listar">
+                  </button>
+                </a>
               </div>
 
               <div>
-               
-                <button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#modaleliminar"  > <img src="../img/delete.ico" alt=""
-                    class="iconos-listar"></button>
+
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modaleliminar"> <img
+                    src="../img/delete.ico" alt="" class="iconos-listar"></button>
               </div>
 
               <div class="form-check form-switch checkeo">
@@ -239,7 +242,8 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="btnCancelar" onclick="realizarAccionCancelar()">Confirmar</button>
+                    <button type="button" class="btn btn-primary" id="btnCancelar"
+                      onclick="realizarAccionCancelar()">Confirmar</button>
                   </div>
                 </div>
               </div>
@@ -257,18 +261,15 @@
             <!--BOTONES DE OPERACION-->
             <td class="icons">
               <div>
-                <button type="button" class="btn"> <img src="../img/pencil.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/pencil.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/show.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/show.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
-                    class="iconos-listar"></button>
+                <button type="button" class="btn"> <img src="../img/delete.ico" alt="" class="iconos-listar"></button>
               </div>
 
               <div class="form-check form-switch checkeo">
@@ -286,7 +287,7 @@
             <td class="datosListar">botabue@gmail.com</td>
             <td class="datosListar">Activo</td>
             <!--BOTONES DE OPERACION-->
-            
+
 
 
 
@@ -295,18 +296,15 @@
 
             <td class="icons">
               <div>
-                <button type="button" class="btn"> <img src="../img/pencil.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/pencil.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/show.ico" alt=""
-                    class="iconos-listar"> </button>
+                <button type="button" class="btn"> <img src="../img/show.ico" alt="" class="iconos-listar"> </button>
               </div>
 
               <div>
-                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
-                    class="iconos-listar"></button>
+                <button type="button" class="btn"> <img src="../img/delete.ico" alt="" class="iconos-listar"></button>
               </div>
               <div class="form-check form-switch checkeo">
                 <input class="form-check-input btn-switch" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -315,23 +313,23 @@
 
             <!--modal para el cambio de estado del switch-->
 
-<div class="modal" tabindex="-1" id="modalestado">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Deseas cambiar el estado</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="modal" tabindex="-1" id="modalestado">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Deseas cambiar el estado</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 
