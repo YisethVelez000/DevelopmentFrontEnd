@@ -65,6 +65,20 @@ app.get('/vistaCotizacion', (req, res) => {
     res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
 })
 
+app.get('/compras', (req, res) => {
+    res.render('compras')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/visualizarCompra', (req, res) => {
+    res.render('visualizarCompra')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/editarCompra', (req, res) => {
+    res.render('editarCompra')//Redireccionar hacia el archivo de hbs
+})
+
+
+
 app.get('*', (req, res) => {
     //res.sendFile(__dirname+'/public/views/404.hbs')
     res.render('404')//Redireccionar hacia el archivo de blade
