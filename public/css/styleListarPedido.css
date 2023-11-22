@@ -1,12 +1,11 @@
 
 body {
-
     background-color: rgb(245, 245, 245);
 }
 
 .container { /* Contenedor Padre */
     width: 1200px;
-    height: 500px;
+    height: 450px;
     background-color: rgb(255, 255, 255);
     display: flex;
     margin-top: 50px;

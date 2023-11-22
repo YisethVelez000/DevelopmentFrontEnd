@@ -55,9 +55,9 @@ function validarCelular() {
   var inputCelular = document.getElementById('Celular');
   var mensajeErrorCelular = document.getElementById('mensajeErrorCelular');
 
-  var regexCelular = /^[0-9]{10}$/;
+  var regex = /^[0-9]{10}$/;
 
-  if (regexCelular.test(inputCelular.value)) {
+  if (regex.test(inputCelular.value)) {
       inputCelular.classList.remove('invalido');
       inputCelular.classList.add('valido');
       mensajeErrorCelular.textContent = '';
@@ -70,21 +70,21 @@ function validarCelular() {
 }
 
 
-function validarDireccion() {
-  var inputDireccion = document.getElementById('direccion');
-  var mensajeErrorDireccion = document.getElementById('mensajeErrorDireccion');
+function validarDireccionResid() {
+  var inputDireccionResid = document.getElementById('direccionResid');
+  var mensajeErrorDireccionResid = document.getElementById('mensajeErrorDireccionResid');
 
   var regex = /^(?!\s*$)[a-zA-Z0-9\s\-\/#]{11,}$/;
 
-  if (regex.test(inputDireccion.value)) {
-    inputDireccion.classList.remove('invalido');
-    inputDireccion.classList.add('valido');
-    mensajeErrorDireccion.textContent = '';
+  if (regex.test(inputDireccionResid.value)) {
+    inputDireccionResid.classList.remove('invalido');
+    inputDireccionResid.classList.add('valido');
+    mensajeErrorDireccionResid.textContent = '';
   } else {
-    inputDireccion.classList.remove('valido');
-    inputDireccion.classList.add('invalido');
-    mensajeErrorDireccion.style.color = 'red';
-    mensajeErrorDireccion.textContent = 'Ingrese una dirección con al menos 11 caracteres.';
+    inputDireccionResid.classList.remove('valido');
+    inputDireccionResid.classList.add('invalido');
+    mensajeErrorDireccionResid.style.color = 'red';
+    mensajeErrorDireccionResid.textContent = 'Ingrese una dirección con al menos 11 caracteres.';
   }
 }
 
@@ -105,6 +105,47 @@ function validarApto() {
     mensajeErrorApto.textContent = 'Ingrese un apto válido(solo letras y números).';
   }
 }
+
+
+//Info pedido
+
+function validarNumPedido() {
+  var inputNumPedido = document.getElementById('numPedido');
+  var mensajeErrorNumPedido = document.getElementById('mensajeErrorNumPedido');
+
+  var regex = /^[1-9]\d{0,3}$/;
+
+  if (regex.test(inputNumPedido.value)) {
+    inputNumPedido.classList.remove('invalido2');
+    inputNumPedido.classList.add('valido2');
+    mensajeErrorNumPedido.textContent = '';
+  } else {
+    inputNumPedido.classList.remove('valido2');
+    inputNumPedido.classList.add('invalido2');
+    mensajeErrorNumPedido.style.color = 'red';
+    mensajeErrorNumPedido.textContent = 'Solo 4 números.';
+  }
+}
+
+
+function validarDireccion() {
+  var inputDireccion = document.getElementById('direccion');
+  var mensajeErrorDireccion= document.getElementById('mensajeErrorDireccion');
+
+  var regex = /^(?!\s*$)[a-zA-Z0-9\s\-\/#]{11,}$/;
+
+  if (regex.test(inputDireccion.value)) {
+    inputDireccion.classList.remove('invalido2');
+    inputDireccion.classList.add('valido2');
+    mensajeErrorDireccion.textContent = '';
+  } else {
+    inputDireccion.classList.remove('valido2');
+    inputDireccion.classList.add('invalid2o');
+    mensajeErrorDireccion.style.color = 'red';
+    mensajeErrorDireccion.textContent = 'Ingrese una dirección con al menos 11 caracteres.';
+  }
+}
+
 
 
 

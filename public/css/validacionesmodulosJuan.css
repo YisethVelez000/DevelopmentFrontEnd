@@ -3,7 +3,7 @@
 }
 
 /* Estilo para entrada válida */
-.btnInput.valido {
+.btnInput.valido  {
     border: 1px solid #34ed5f;
 }
 
@@ -11,6 +11,20 @@
 .btnInput.invalido {
     border: 1px solid #dc3545;
 }
+
+
+.btnInput2 {
+    width: 180px;
+}
+
+.btnInput2.valido2 {
+    border: 1px solid #34ed5f;
+}
+
+
+ .btnInput2.invalido2{
+    border: 1px solid #dc3545;
+ } 
 
 
 #mensajeError {
@@ -56,6 +70,27 @@
 }
 
 #mensajeErrorDetalle {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+#mensajeErrorNumPedido {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+#mensajeErrorDireccionResid {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+#mensajeErrorDireccion{
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
