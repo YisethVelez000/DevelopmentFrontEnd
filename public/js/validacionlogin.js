@@ -1,38 +1,43 @@
-//Importamos el arreglo de usuarios
-//import { usuarios } from './validacionregistrarse.js';
-
-//Función para validar el inicio de sesión
-function validarCorreo() {
-    var correoInput = document.getElementById('correoElectronico');
-    var mensajeErrorCorreo = document.getElementById('mensajeErrorCorreo');
-
-    // Expresión regular para validar el formato de correo electrónico
-    var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (correoInput.value.trim() === '') {
-        // El campo está vacío, muestra un mensaje de error
-        mensajeErrorCorreo.innerHTML = 'Por favor, ingrese su correo electrónico.';
-        mensajeErrorCorreo.style.color = 'red';
-        return false;
-    } else if (!regexCorreo.test(correoInput.value)) {
-        // El formato del correo electrónico no es válido, muestra un mensaje de error
-        mensajeErrorCorreo.innerHTML = 'Por favor, ingrese un correo electrónico válido.';
-        mensajeErrorCorreo.style.color = 'red';
-        return false;
-    } else {
-        // La entrada es válida, borra el mensaje de error
-        mensajeErrorCorreo.innerHTML = '';
-        mensajeErrorCorreo.style.color = 'green';
-        correoInput.classList.add('valido');
-        correoInput.classList.remove('invalido');
-        return true;
+function login() {
+    // Valida los datos de inicio de sesión
+    if (validarCorreo() && validarContraseña()) {
+      // Realiza la solicitud de inicio de sesión
+      $.ajax({
+        url: "",
+        type: "POST",
+        data: {
+          correoElectronico: $("#correoElectronico").val(),
+          contraseña: $("#password").val(),
+        },
+        success: function(respuesta) {
+          // Si la respuesta es exitosa, muestra una alerta
+          if (respuesta.exito) {
+            Swal.fire({
+              title: "Inicio de sesión exitoso",
+              text: "Has iniciado sesión correctamente.",
+              icon: "success",
+            });
+  
+            // Redirecciona al usuario a la página principal
+            window.location.href = "/";
+          } else {
+            // Si la respuesta es fallida, muestra una alerta
+            Swal.fire({
+              title: "Inicio de sesión fallido",
+              text: respuesta.mensaje,
+              icon: "error",
+            });
+          }
+        },
+        error: function(error) {
+          // Si hay un error, muestra una alerta
+          Swal.fire({
+            title: "Inicio de sesión fallido",
+            text: "Ha ocurrido un error al iniciar sesión.",
+            icon: "error",
+          });
+        },
+      });
     }
-}
-
-function validarContraseña() {
-    var contraseñaInput = document.getElementById('contraseña');
-    var mensajeErrorContraseña = document.getElementById('mensajeErrorContraseña');
-
-    // Expresión regular para validar el formato de correo electrónico
-    var regex = /^[a-zA-Z0-9]{5,}$/;
-}
+  }
+  

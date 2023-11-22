@@ -18,18 +18,18 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + '/public/views/partials');
 
 app.get('/', (req, res) => {
-    res.render('index')//Redireccionar hacia el archivo de hbs
+    res.render('index')
 })
 
 app.get('/pedidos', (req, res) => {
-    res.render('listarPedido')//Redireccionar hacia el archivo de hbs
+    res.render('listarPedido')
 })
 app.get('/login', (req, res) => {
-    res.render('login')//Redireccionar hacia el archivo de hbs
+    res.render('login')
 })
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
-})//Redireccionar hacia el archivo de hbs
+})
 
 app.get('/empleados', (req, res) => {
     res.render('empleados')
@@ -44,7 +44,46 @@ app.get('/listarfichatecnica', (req, res) => {
     res.render('listarfichatecnica')
 })/
 app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
+    res.render('agregarPedido')
+})
+
+app.get('/insumos', (req, res) => {
+    res.render('registrarInsumos')
+})
+
+app.get('/categoriaInsumos', (req, res) => {
+    res.render('registrarCatInsumos')
+})
+
+app.get('/cotizacion', (req, res) => {
+    res.render('cotizacion')
+})
+
+app.get('/listarCotizacion', (req, res) => {
+    res.render('listarCotizacion')
+})
+
+app.get('/vistaCotizacion', (req, res) => {
+    res.render('vistaCotizacion')
+})
+app.get('/proveedores', (req, res) => {
+    res.render('proveedores')
+})
+
+app.get('/empleados', (req, res) => {
+    res.render('empleados')
+})
+app.get('/fichatecnica', (req, res) => {
+    res.render('fichatecnica')
+})
+app.get('/editarfichatecnica', (req, res) => {
+    res.render('editarfichatecnica')
+})
+app.get('/listarfichatecnica', (req, res) => {
+    res.render('listarfichatecnica')
+})
+app.get('/agregarPedido', (req, res) => {
+    res.render('agregarPedido')
 })
 
 app.get('/insumos', (req, res) => {
@@ -100,27 +139,79 @@ app.get('/visualizarPedido', (req, res) => {
 
 
 app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
+    res.render('registrarInsumos')
 })
 
 app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
+    res.render('registrarCatInsumos')
 })
 
 app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('cotizacion')
 })
 
 app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('listarCotizacion')
 })
 
 app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('vistaCotizacion')
+})
+
+app.get('/proveedores', (req, res) => {
+    res.render('proveedores')
+})
+app.get('/visualizarproveedor', (req, res) => {
+    res.render('visualizarproveedor')
+})//Redireccionar hacia el archivo de hbs
+
+app.get('/empleados', (req, res) => {
+    res.render('empleados')
+})//
+app.get('/fichatecnica', (req, res) => {
+    res.render('fichatecnica')
+})//
+app.get('/editarfichatecnica', (req, res) => {
+    res.render('editarfichatecnica')
+})
+app.get('/listarfichatecnica', (req, res) => {
+    res.render('listarfichatecnica')
+})
+app.get('/agregarPedido', (req, res) => {
+    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/editarPedido', (req, res) => {
+    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/visualizarPedido', (req, res) => {
+    res.render('visualizarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+
+app.get('/insumos', (req, res) => {
+    res.render('registrarInsumos')
+})
+
+app.get('/categoriaInsumos', (req, res) => {
+    res.render('registrarCatInsumos')
+})
+
+app.get('/cotizacion', (req, res) => {
+    res.render('cotizacion')
+})
+
+app.get('/listarCotizacion', (req, res) => {
+    res.render('listarCotizacion')
+})
+
+app.get('/vistaCotizacion', (req, res) => {
+    res.render('vistaCotizacion')
 })
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
-})//Redireccionar hacia el archivo de hbs
+})
 
 app.get('/empleados', (req, res) => {
     res.render('empleados')
@@ -139,15 +230,15 @@ app.get('/listarfichatecnica', (req, res) => {
     res.render('listarfichatecnica')
 })/
 app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
+    res.render('agregarPedido')
 })
 
 app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
+    res.render('registrarInsumos')
 })
 
 app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
+    res.render('registrarCatInsumos')
 })
 app.get('/visualizarficha', (req, res) => {
     res.render('visualizarficha')//Redireccionar hacia el archivo de hbs
@@ -155,11 +246,11 @@ app.get('/visualizarficha', (req, res) => {
 
 
 app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('cotizacion')
 })
 
 app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('listarCotizacion')
 })
 
 app.get('/vistaCotizacion', (req, res) => {

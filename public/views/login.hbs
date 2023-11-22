@@ -33,7 +33,7 @@
                     <label for="contraseña" class="form-label fontTtitle">
                         <h5 class="txt1">Contraseña <span class="text-danger">*</span></h5>
                     </label>
-                    <input class="form-control btnInput" type="password" name="contraseña" id="contraseña"
+                    <input class="form-control btnInput" type="password" name="password" id="password"
                         oninput="validarContraseña()">
                     <div id="mensajeErrorContraseña" class="mensajeError"></div>
 
@@ -48,14 +48,14 @@
                         <div>
                             <a class="txt1 mx-5" href="olvidasteContraseña.html">
                                 ¿Olvidaste tu contraseña?
-                                <a>
+                            </a>
                         </div>
                     </div>
 
 
                     <div class="container-login100-form-btn">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-primary" onclick="validarFormulario()">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#loginModal" id="loginButton" onclick="modalLogin()">
                             Iniciar Sesión
                         </button>
                     </div>
@@ -67,12 +67,47 @@
                     </div>
                 </form>
 
-                <div class="login100-more" style="background-image: url('../img/Background.svg');">
+                <div class="login100-more" style="background-image: url('../img/Background.svg');"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Inicio Exitoso -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inicio Exitoso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¡Bienvenido! Has iniciado sesión correctamente.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../js/funcioneslogin.js"></script>
     <script src="../js/validacionlogin.js"></script>
+    <!-- Agrega esto antes de cerrar la etiqueta </body> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-O4TnYuAT+U8PC1h1vA4bUQTbL6rU5lA0M/M9szA2IeV4K478qD4GgEQF4gNm/s"
+        crossorigin="anonymous"></script>
+    <script>
+        function modalLogin() {
+    // Aquí puedes agregar lógica adicional si es necesario
+    // Por ejemplo, redirección a otra página o ejecutar alguna acción específica
+    alert('¡Bienvenido! Has iniciado sesión correctamente.');
+    //Rediciona a la pagina principal
+    // window.location.href = "";
+    // Cierra el modal después de realizar la acción
+    var miModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    miModal.hide();
+}
+    </script>
+
 </body>
 
 </html>
