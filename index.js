@@ -112,6 +112,10 @@ app.get('/proveedores', (req, res) => {
 app.get('/empleados', (req, res) => {
     res.render('empleados')
 })//
+app.get('/visualizarempleado', (req, res) => {
+    res.render('visualizarempleado')
+})//
+
 app.get('/fichatecnica', (req, res) => {
     res.render('fichatecnica')
 })//
