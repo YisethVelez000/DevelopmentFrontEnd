@@ -30,7 +30,6 @@ app.get('/login', (req, res) => {
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
 })//Redireccionar hacia el archivo de hbs
-<<<<<<< HEAD
 
 app.get('/empleados', (req, res) => {
     res.render('empleados')
@@ -70,10 +69,9 @@ app.get('/vistaCotizacion', (req, res) => {
 
 app.get('/proveedores', (req, res) => {
     res.render('proveedores')
-=======
+})
 app.get('/visualizarproveedor', (req, res) => {
     res.render('visualizarproveedor')
->>>>>>> f77e433483ca92c8d3c433ee7c1bc76681bf41e7
 })//Redireccionar hacia el archivo de hbs
 
 app.get('/empleados', (req, res) => {
