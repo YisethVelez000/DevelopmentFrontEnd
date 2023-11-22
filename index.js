@@ -157,6 +157,9 @@ app.get('/editarUsuario', (req, res) => {
 })
 
 app.get('/ordenProduccion', (req, res) => {
+    res.render('listarOrdenProduccion')
+})
+app.get('/agregarOrdenProduccion', (req, res) => {
     res.render('ordenProduccion')
 })
 app.get('*', (req, res) => {
