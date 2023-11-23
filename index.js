@@ -87,23 +87,23 @@ app.get('/agregarPedido', (req, res) => {
 })
 
 app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
+    res.render('registrarInsumos')
 })
 
 app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
+    res.render('registrarCatInsumos')
 })
 
 app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('cotizacion')
 })
 
 app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('listarCotizacion')
 })
 
 app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
+    res.render('vistaCotizacion')
 })
 
 app.get('/proveedores', (req, res) => {
@@ -231,9 +231,11 @@ app.get('/listarfichatecnica', (req, res) => {
 })/
 app.get('/agregarPedido', (req, res) => {
     res.render('agregarPedido')
+    res.render('agregarPedido')
 })
 
 app.get('/insumos', (req, res) => {
+    res.render('registrarInsumos')
     res.render('registrarInsumos')
 })
 
@@ -246,6 +248,7 @@ app.get('/visualizarficha', (req, res) => {
 
 
 app.get('/cotizacion', (req, res) => {
+    res.render('cotizacion')
     res.render('cotizacion')
 })
 
