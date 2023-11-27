@@ -21,274 +21,135 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/pedidos', (req, res) => {
-    res.render('listarPedido')
+app.get('*', (req, res) => {
+    //res.sendFile(__dirname+'/public/views/404.hbs')
+    res.render('404')//Redireccionar hacia el archivo de blade
 })
+
+app.get('/agregarPedido', (req, res) => {
+    res.render('agregarPedido')
+})
+
+app.get('/compras', (req, res) => {
+    res.render('compras')
+})
+
+app.get('/cotizacion', (req, res) => {
+    res.render('cotizacion')
+})
+
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard')
+})
+
+
+app.get('/editarCompra', (req, res) => {
+    res.render('editarCompra')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/editarfichatecnica', (req, res) => {
+    res.render('editarfichatecnica')
+})
+
+app.get('/editarPedido', (req, res) => {
+    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/editarUsuario', (req, res) => {
+    res.render('editarUsuario')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/empleados', (req, res) => {
+    res.render('empleados')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/estampados', (req, res) => {
+    res.render('estampados')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/fichaTecnica', (req, res) => {
+    res.render('fichaTecnica')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/listarCotizacion', (req, res) => {
+    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/listarFichaTecnica', (req, res) => {
+    res.render('listarFichaTecnica')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/listarOrdenProduccion', (req, res) => {
+    res.render('listarOrdenProduccion')//Redireccionar hacia el archivo de hbs
+})
+
+
+app.get('/listarPedido', (req, res) => {
+    res.render('listarPedido')//Redireccionar hacia el archivo de hbs
+})
+
+
 app.get('/login', (req, res) => {
-    res.render('login')
-})
-app.get('/proveedores', (req, res) => {
-    res.render('proveedores')
+    res.render('login')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/empleados', (req, res) => {
-    res.render('empleados')
-})//
-app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica')
-})//
-app.get('/editarfichatecnica', (req, res) => {
-    res.render('editarfichatecnica')
-})/
-app.get('/listarfichatecnica', (req, res) => {
-    res.render('listarfichatecnica')
-})/
-app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')
-})
-
-app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')
-})
-
-app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')
-})
-
-app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')
-})
-
-app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')
-})
-
-app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')
-})
-app.get('/proveedores', (req, res) => {
-    res.render('proveedores')
-})
-
-app.get('/empleados', (req, res) => {
-    res.render('empleados')
-})
-app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica')
-})
-app.get('/editarfichatecnica', (req, res) => {
-    res.render('editarfichatecnica')
-})
-app.get('/listarfichatecnica', (req, res) => {
-    res.render('listarfichatecnica')
-})
-app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')
-})
-
-app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')
-})
-
-app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')
-})
-
-app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')
-})
-
-app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')
-})
-
-app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')
+app.get('/ordenProduccion', (req, res) => {
+    res.render('ordenProduccion')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('/proveedores', (req, res) => {
-    res.render('proveedores')
-})
-app.get('/visualizarproveedor', (req, res) => {
-    res.render('visualizarproveedor')
-})//Redireccionar hacia el archivo de hbs
-
-app.get('/empleados', (req, res) => {
-    res.render('empleados')
-})//
-app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica')
-})//
-app.get('/editarfichatecnica', (req, res) => {
-    res.render('editarfichatecnica')
-})
-app.get('/listarfichatecnica', (req, res) => {
-    res.render('listarfichatecnica')
-})
-app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/editarPedido', (req, res) => {
-    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/visualizarPedido', (req, res) => {
-    res.render('visualizarPedido')//Redireccionar hacia el archivo de hbs
+    res.render('proveedores')//Redireccionar hacia el archivo de hbs
 })
 
 
-app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')
-})
-
-app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')
-})
-
-app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')
-})
-
-app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')
-})
-
-app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')
-})
-
-app.get('/proveedores', (req, res) => {
-    res.render('proveedores')
-})
-app.get('/visualizarproveedor', (req, res) => {
-    res.render('visualizarproveedor')
-})//Redireccionar hacia el archivo de hbs
-
-app.get('/empleados', (req, res) => {
-    res.render('empleados')
-})//
-app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica')
-})//
-app.get('/editarfichatecnica', (req, res) => {
-    res.render('editarfichatecnica')
-})
-app.get('/listarfichatecnica', (req, res) => {
-    res.render('listarfichatecnica')
-})
-app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/editarPedido', (req, res) => {
-    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/visualizarPedido', (req, res) => {
-    res.render('visualizarPedido')//Redireccionar hacia el archivo de hbs
+app.get('/registrarCatInsumos', (req, res) => {
+    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
 })
 
 
-app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')
+app.get('/registrarInsumos', (req, res) => {
+    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')
-})
-
-app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')
-})
-
-app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')
-})
-
-app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')
-})
-app.get('/proveedores', (req, res) => {
-    res.render('proveedores')
-})
-
-app.get('/empleados', (req, res) => {
-    res.render('empleados')
-})//
-app.get('/visualizarempleado', (req, res) => {
-    res.render('visualizarempleado')
-})//
-
-app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica')
-})//
-app.get('/editarfichatecnica', (req, res) => {
-    res.render('editarfichatecnica')
-})/
-app.get('/listarfichatecnica', (req, res) => {
-    res.render('listarfichatecnica')
-})/
-app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')
-    res.render('agregarPedido')
-})
-
-app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')
-    res.render('registrarInsumos')
-})
-
-app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')
-})
-app.get('/visualizarficha', (req, res) => {
-    res.render('visualizarficha')//Redireccionar hacia el archivo de hbs
+app.get('/roles', (req, res) => {
+    res.render('roles')//Redireccionar hacia el archivo de hbs
 })
 
 
-app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')
-    res.render('cotizacion')
-})
-
-app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')
+app.get('/ventas', (req, res) => {
+    res.render('ventas')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('/vistaCotizacion', (req, res) => {
     res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
 })
 
-/* Inicio Vistas Valentina */
 
-app.get('/roles', (req, res) => {
-    res.render('roles')
+
+app.get('/visualizarCompra', (req, res) => {
+    res.render('visualizarCompra')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/estampados', (req, res) => {
-    res.render('estampados')
+app.get('/visualizarEmpleado', (req, res) => {
+    res.render('visualizarEmpleado')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/ventas', (req, res) => {
-    res.render('ventas')
+
+app.get('/visualizarFicha', (req, res) => {
+    res.render('visualizarFicha')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/detalleVenta', (req, res) => {
-    res.render('detalleVenta')
+
+app.get('/visualizarPedido', (req, res) => {
+    res.render('visualizarPedido')//Redireccionar hacia el archivo de hbs
 })
 
-app.get('/dashboard', (req, res) => {
-    res.render('dashboard')
+
+app.get('/visualizarProveedor', (req, res) => {
+    res.render('visualizarProveedor')//Redireccionar hacia el archivo de hbs
 })
 
-/* Fin Vistas Valentina */
-
-
-app.get('*', (req, res) => {
-    //res.sendFile(__dirname+'/public/views/404.hbs')
-    res.render('404')//Redireccionar hacia el archivo de blade
-})
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
