@@ -18,7 +18,7 @@ function validarNombreProveedor() {
 }
 //verificacion del nit
 function validarNIT() {
-    var inputNIT = document.getElementById('Nit');
+    var inputNIT = document.getElementById('nit');
     var mensajeErrorNIT = document.getElementById('mensajeErrorNit');
 
     // Expresión regular para validar un NIT en Colombia
@@ -36,7 +36,7 @@ function validarNIT() {
 }
 //validar direccion
 function validarDireccion() {
-    var inputDireccion = document.getElementById('Dirección');
+    var inputDireccion = document.getElementById('direccion');
     var mensajeErrorDireccion = document.getElementById('mensajeErrorDireccion');
 
     // Expresión regular básica para validar una dirección en Colombia
@@ -65,7 +65,7 @@ function validarDireccion() {
 
 //validar correo
 function validarCorreo() {
-    var correoInput = document.getElementById('Correo');
+    var correoInput = document.getElementById('correo');
     var mensajeErrorCorreo = document.getElementById('mensajeErrorCorreo');
     
     // Expresión regular para validar el formato de correo electrónico
@@ -95,7 +95,7 @@ function validarCorreo() {
   //validar nombre contacto
 
 function validarNombreContacto() {
-    var inputNombrecontacto = document.getElementById('NombreContacto');
+    var inputNombrecontacto = document.getElementById('nombreContacto');
     var mensajeError = document.getElementById('mensajeErrorcontacto');
 
     // Expresión regular para validar que solo contiene letras y espacios
@@ -116,7 +116,7 @@ function validarNombreContacto() {
 
 //validacion numero de telefono
 function validarNumeroContacto() {
-    var inputNumerocontacto = document.getElementById('Numerocontacto');
+    var inputNumerocontacto = document.getElementById('numerocontacto');
     var mensajeErrorTelefono = document.getElementById('mensajeErrorTelefono');
 
     var regexNumerocontacto = /^[0-9]{7,10}$/;
@@ -132,49 +132,49 @@ function validarNumeroContacto() {
         mensajeErrorTelefono.style.color = 'red';;
     }
 }
-//modal de guardar
-function mostrarModal() {
-    // Obtiene la instancia de la modal utilizando Bootstrap
-    var miModal = new bootstrap.Modal(document.getElementById('miModal'));
+// //modal de guardar
+// function mostrarModal() {
+//     // Obtiene la instancia de la modal utilizando Bootstrap
+//     var miModal = new bootstrap.Modal(document.getElementById('miModal'));
     
     
-    miModal.show();
-  }
+//     miModal.show();
+//   }
   
-  //redirigir el aceptar al formulario
-  document.getElementById('btnAceptar').addEventListener('click', function() {
+//   //redirigir el aceptar al formulario
+//   document.getElementById('btnAceptar').addEventListener('click', function() {
   
-    window.location.href = 'formularioProveedores.html';  // Reemplaza '/ruta-de-tu-formulario.html' con la ruta correcta
-  });
+//     window.location.href = 'formularioProveedores.html';  // Reemplaza '/ruta-de-tu-formulario.html' con la ruta correcta
+//   });
   
 
     //modal de cancelar
-function realizarAccionCancelar() {
-    // Aquí puedes agregar lógica adicional si es necesario
-    // Por ejemplo, redirección a otra página o ejecutar alguna acción específica
-    console.log('Acción de cancelar realizada');
+// function realizarAccionCancelar() {
+//     // Aquí puedes agregar lógica adicional si es necesario
+//     // Por ejemplo, redirección a otra página o ejecutar alguna acción específica
+//     console.log('Acción de cancelar realizada');
 
-    // Cierra el modal después de realizar la acción
-    var miModal = new bootstrap.Modal(document.getElementById('miModal'));
-    miModal.hide();
-}
-document.getElementById('btnCancelar').addEventListener('click', function() {
+//     // Cierra el modal después de realizar la acción
+//     var miModal = new bootstrap.Modal(document.getElementById('miModal'));
+//     miModal.hide();
+// }
+// document.getElementById('btnCancelar').addEventListener('click', function() {
   
-    window.location.href = 'formularioProveedores.html';  // Reemplaza '/ruta-de-tu-formulario.html' con la ruta correcta
-  });
+//     window.location.href = 'formularioProveedores.html';  // Reemplaza '/ruta-de-tu-formulario.html' con la ruta correcta
+//   });
 
 
   //modal para cambio de estado
-  var switchElement = document.getElementById('flexSwitchCheckDefault');
-  switchElement.addEventListener('change', function() {
-    // Muestra u oculta el modal según el estado del switch
-    var modal = new bootstrap.Modal(document.getElementById('modalestado'));
-    if (switchElement.checked) {
-      modal.show();
-    } else {
-      modal.hide();
-    }
-  });
+//   var switchElement = document.getElementById('flexSwitchCheckDefault');
+//   switchElement.addEventListener('change', function() {
+//     // Muestra u oculta el modal según el estado del switch
+//     var modal = new bootstrap.Modal(document.getElementById('modalestado'));
+//     if (switchElement.checked) {
+//       modal.show();
+//     } else {
+//       modal.hide();
+//     }
+//   });
 
 
 

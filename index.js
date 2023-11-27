@@ -76,6 +76,9 @@ app.get('/proveedores', (req, res) => {
 app.get('/empleados', (req, res) => {
     res.render('empleados')
 })//
+app.get('/listarEmpleados', (req, res) => {
+    res.render('listarEmpleados')
+})//
 app.get('/visualizarempleado', (req, res) => {
     res.render('visualizarempleado')
 })//

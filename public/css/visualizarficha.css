@@ -17,12 +17,3 @@
     border: 1px solid #ddd;
   }
 
-  .row2{ /* Contenedor Hijo */
-    width: 650px;
-    height:1200px;
-    margin-left: 400px;
-    margin-top: -1040px;
-   background-color: rgb(245, 245, 245);
-   border-radius: 10px 0 10px 0;
-
-}
