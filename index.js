@@ -76,6 +76,10 @@ app.get('/listarCotizacion', (req, res) => {
     res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
 })
 
+app.get('/listarEmpleados', (req, res) => {
+    res.render('listarEmpleados')//Redireccionar hacia el archivo de hbs
+})
+
 app.get('/listarFichaTecnica', (req, res) => {
     res.render('listarFichaTecnica')//Redireccionar hacia el archivo de hbs
 })
