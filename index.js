@@ -73,7 +73,7 @@ app.get('/fichaTecnica', (req, res) => {
 })
 
 app.get('/listarCotizacion', (req, res) => {
-    res.render('editarPedido')//Redireccionar hacia el archivo de hbs
+    res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('/listarFichaTecnica', (req, res) => {
