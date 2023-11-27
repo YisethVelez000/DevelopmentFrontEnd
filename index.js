@@ -18,7 +18,7 @@ app.set('view engine', 'hbs')
 hbs.registerPartials(__dirname + '/public/views/partials');
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('*', (req, res) => {
@@ -74,6 +74,10 @@ app.get('/fichaTecnica', (req, res) => {
 
 app.get('/listarCotizacion', (req, res) => {
     res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
+})
+
+app.get('/listarEmpleados', (req, res) => {
+    res.render('listarEmpleados')//Redireccionar hacia el archivo de hbs
 })
 
 app.get('/listarFichaTecnica', (req, res) => {
