@@ -1,44 +1,25 @@
-
-  
-  .tablaColoresContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .fila-color {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
- 
-  
-  .eliminar-btn {
-    padding: 10px 10px;
-    background-color:  #1f2553;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-  }
-  .cuadro-color {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-.campo-insumo {
-  margin-bottom: 10px;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: -10px;
 }
 
-.incompleto {
-  border: 1px solid red;
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
-.completo {
-  border: 1px solid green;
+th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos de las celdas de color */
+.color-celda {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
 }
