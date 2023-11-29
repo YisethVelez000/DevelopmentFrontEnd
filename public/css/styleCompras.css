@@ -281,3 +281,20 @@ h1 {
 
   
 }
+
+.btnDescargar{
+    background-color: #1f2553;
+    color: #f7f7f7;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    margin-left: 230px;
+    margin-top: -60px;
+}
+
+.btnDescargar:hover{
+    background-color: #e1e1e1;
+    color: #1f2553;
+    border: 2px solid #1f2553;
+
+}
