@@ -115,22 +115,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
         integrity="sha384-qRjgN70F6F2UqKvZtxIj6jfcgZlV5BdGJ8mOA4O5TFP0MfPXT1OfJiLNT9cM51Vq" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('descargarFacturaBtn').addEventListener('click', function () {
-            descargarFactura();
-        });
-
-        function descargarFactura() {
-            const blob = new Blob([''], { type: 'application/pdf' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'factura.pdf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }
+<script src="js/ventas.js">
+       
     </script>
 </body>
 
