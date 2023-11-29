@@ -38,7 +38,7 @@ body{
     margin-bottom: 40px;
     margin-top: 15px;
     font-weight: bold;
-    padding-left: 40px;
+    padding-left: 10px;
 }
 
 .textoh2 { /* Subtítulo para el formulario */
@@ -57,7 +57,7 @@ body{
     display: flex;
     margin-top: -590px;
     margin-left: 20px;
-    padding-top: 40px;
+    padding-top: 10px;
     font-weight: bold;
 }
 
@@ -288,8 +288,8 @@ body{
     display:flex;
     position: absolute;
     width: 30px;
-    margin-top: -15px;
-    margin-left: -15px;
+    margin-top: -20px;
+    margin-left: -10px;
 }
 
 .imgAggProducto { /*IMAGEN DE AGREGAR UN PRODUCTO MÁS */

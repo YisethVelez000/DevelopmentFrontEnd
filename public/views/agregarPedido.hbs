@@ -23,7 +23,7 @@
     <form class="formularioInt">
       <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
 
-             <a href="/pedidos"><img src="/assets/img/return.ico" class="img-return"></a> 
+             <a href="/pedidos"><img src="../img/return.ico" class="img-return"></a> 
               <h1 class="textoh1">Registrar Pedido</h1>
                
                <div class="row"> 
@@ -32,7 +32,7 @@
                 
 
                 <div class="mb-3 form-group">
-                    <label for="numPedido" class="form-label textoh2">Info Pedido</label>
+                    <label for="numPedido" class="form-label textoh2">Info Cliente</label>
                   </div>
 
                      <div class="col-md-12 mt-5 mb-5 form-group">
@@ -54,9 +54,9 @@
                       </div>
 
                       <div class="mb-5 form-group">
-                        <label for="direccion" class="form-label fontTtitle">Dirección <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control btnInput" name="direccion" id="direccion" oninput="validarDireccion()">
-                        <div id="mensajeErrorDireccion"></div>
+                        <label for="direccionResid" class="form-label fontTtitle">Dirección residencia<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control btnInput" name="direccionResid" id="direccionResid" oninput="validarDireccionResid()">
+                        <div id="mensajeErrorDireccionResid"></div>
                       </div>
 
                       <div class="mb-5 form-group">
@@ -84,7 +84,7 @@
 
                        
                 <div class="mb-6 form-group">
-                  <label for="numPedido" class="form-label textoh3">Pedido</label>
+                  <label for="numPedido" class="form-label textoh3">Info Pedido</label>
                 </div>
 
                         <div class="row-cols-2 row3">
@@ -92,17 +92,18 @@
                         <div class="p-1 mb-6 form-group">
                             <label for="numPedido" class="form-label fontTtitle">Núm Pedido <span class="text-danger">*</span></label>
                             <input type="text" class="form-control btnInput2" name="numPedido" id="numPedido"  oninput="validarNumPedido()">
-                            <div id="mensajeErrorApto"></div>
+                            <div id="mensajeErrorNumPedido"></div>
                          </div>
 
                          <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Total Pedido <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" oninput="validarTotalPedido()">
+                            <div id="mensajeErrorTotalPedido"></div>
                          </div> 
 
                          <div class="p-1 mb-6 form-group">
                             <label for="Estado" class="form-label fontTtitle">Estado <span class="text-danger">*</span></label>
-                            <select class="form-select selector" aria-label="Default select example" required>
+                            <select class="form-select selector" aria-label="Default select example" oninput="validarEstado()">
                               <option selected></option>
                               <option value="1">Pendiente</option>
                               <option value="2">Revisión</option>
@@ -113,18 +114,19 @@
                           </div>
 
                           <div class="p-1 mb-6  form-group">
-                            <label for="nomInsumo" class="form-label fontTtitle">Dirección <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <label for="direccion" class="form-label fontTtitle">Dirección envío<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control btnInput2" name="direccion" id="direccion"  oninput="validarDireccion()">
+                            <div id="mensajeErrorDireccion"></div>
                          </div> 
 
                          <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Fecha Pedido <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="date" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" >
                          </div> 
 
                          <div class="p-1 mb-6  form-group">
                             <label for="nomInsumo" class="form-label fontTtitle">Fecha Entrega <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                            <input type="date" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" >
                          </div> 
 
                     </div>
@@ -135,7 +137,7 @@
 
                    <div class="p-2 mb-6  form-group">
                     <label for="nomInsumo" class="form-label fontTtitleAggPedido2">Forma Pago  <span class="text-danger">*</span></label>
-                    <select class="form-select selectPagos" aria-label="Default select example" required>
+                    <select class="form-select selectPagos" aria-label="Default select example" >
                       <option selected></option>
                       <option value="1">Bancolombia</option>
                       <option value="2">Nequi</option>
@@ -157,7 +159,7 @@
                         <form>
                             <div class="form-control">
                               <label for="customFile" class="form-label" >Seleccionar Imagen</label>
-                                <input type="file" class="form-control visually-hidden" id="customFile" accept="image/*" onchange="mostrarImagenSeleccionada(this)" required>
+                                <input type="file" class="form-control visually-hidden" id="customFile" accept="image/*" onchange="mostrarImagenSeleccionada(this)" >
                               
                             </div>
                         </form>
@@ -176,7 +178,7 @@
                     
                     <div class="row4 gridAggPedido">
 
-                      <img src="/assets/img/more.ico" alt="Agregar Producto" class="imgAggProducto">
+                      <img src="../img/more.ico" alt="Agregar Producto" class="imgAggProducto">
 
                       <div class="p-2 mb-6  form-group">
                         <label for="nomInsumo" class="form-label fontTtitleAggPedido">Producto</label>
@@ -184,12 +186,12 @@
 
                      <div class="p-2 mb-6  form-group">
                       <label for="nomInsumo" class="form-label fontTtitleAggPedido">Cantidad <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" required>
+                      <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo"  >
                    </div> 
 
                    <div class="p-2 mb-6  form-group">
                     <label for="nomInsumo" class="form-label fontTtitleAggPedido">Talla <span class="text-danger">*</span></label>
-                    <select class="form-select" aria-label="Default select example" required>
+                    <select class="form-select" aria-label="Default select example" >
                       <option selected></option>
                       <option value="1">S</option>
                       <option value="2">M</option>
@@ -200,7 +202,7 @@
                  </div> 
 
                       <div class="contenedorImg">
-                          <img src="/assets/img/hoodie.png" alt="hoodie" class="imgProducto">
+                          <img src="" alt="Img Producto" class="imgProducto">
 
                       </div>
 
@@ -230,45 +232,45 @@
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <th scope="row" class="datosListar">Camisa</th>
-                                        <td class="datosListar">Chaqueta</td>
-                                        <td class="datosListar">10</td>
-                                        <td class="datosListar">S</td>
-                                        <td class="datosListar">145.000</td>
+                                        <th scope="row" class="datosListar">---</th>
+                                        <td class="datosListar">---</td>
+                                        <td class="datosListar">---</td>
+                                        <td class="datosListar">---</td>
+                                        <td class="datosListar">---</td>
                                         <td class="icons"> 
             
                                                 <!--BOTONES SIN LA MODAL, ASÍ SE USARÁN NORMALMENTE--> 
-                                                <div> 
-                                                    <a href=""> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
-                                               </div>
-                                                <div> 
-                                                    <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a>
-                                                </div>
-            
-                                                    <div> 
-                                                         <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a>
-                                                    </div>
-                                        </td>
-                                      </tr>
-            
-                                      <tr>
-                                        <th scope="row" class="datosListar">0002</th>
-                                        <td class="datosListar">Pantalon</td>
-                                        <td class="datosListar">20</td>
-                                        <td class="datosListar">L</td>
-                                        <td class="datosListar">25.000</td>
-                                        <td class="icons"> 
-            
-                                            <div> 
-                                                <a href=""> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
+                                                  <div> 
+                                                <a href=""> <img src="../img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
                                            </div>
             
                                             <div>  
-                                                 <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a>
+                                                 <a href="/agregarPedido.html"> <img src="../img/show.ico" alt="" class="iconos-listar img-show"></a>
                                              </div>
             
                                              <div>  
-                                                 <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a>
+                                                 <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar img-delete"></a>
+                                             </div>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row" class="datosListar">---</th>
+                                        <td class="datosListar">---</td>
+                                        <td class="datosListar">---</td>
+                                        <td class="datosListar">---</td>
+                                        <td class="datosListar">---</td>
+                                        <td class="icons"> 
+            
+                                            <div> 
+                                                <a href=""> <img src="../img/pencil.ico" alt="" class="iconos-listar img-delete"></a>
+                                           </div>
+            
+                                            <div>  
+                                                 <a href="/agregarPedido.html"> <img src="../img/show.ico" alt="" class="iconos-listar img-show"></a>
+                                             </div>
+            
+                                             <div>  
+                                                 <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar img-delete"></a>
                                              </div>
                                         </td>
             

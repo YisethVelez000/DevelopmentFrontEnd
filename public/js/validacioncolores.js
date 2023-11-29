@@ -1,52 +1,41 @@
-function agregarColor() {
-    var nuevoColorInput = document.getElementById('nuevoColor');
-    var nuevoColor = nuevoColorInput.value;
-    var tablaColoresBody = document.getElementById('tablaColoresBody');
+document.addEventListener('DOMContentLoaded', function () {
+  const selectColores = document.getElementById('select-colores');
+  const btnAgregar = document.getElementById('btn-agregar');
+  const listaColoresSeleccionados = document.getElementById('colores-seleccionados');
 
-    // Validar que el campo de color no esté vacío
-    if (nuevoColor.trim() === '') {
-      nuevoColorInput.classList.add('incompleto');
-      return; // Detener la función si el campo no está completo
-    } else {
-      nuevoColorInput.classList.remove('incompleto');
-      nuevoColorInput.classList.add('completo');
-    }
+  btnAgregar.addEventListener('click', function () {
+      const selectedColor = selectColores.value;
 
-    // Crea un nuevo elemento div para representar el color
-    var nuevoColorDiv = document.createElement('div');
-    nuevoColorDiv.className = 'color-container';
+      if (selectedColor) {
+          agregarColor(selectedColor);
+      } else {
+          alert('Por favor, seleccione un color.');
+      }
+  });
 
-    // Crea una caja de color
-    var colorBox = document.createElement('div');
-    colorBox.style.backgroundColor = nuevoColor;
-    colorBox.className = 'color-box';
+  function agregarColor(color) {
+      const listItem = document.createElement('li');
+      listItem.className = 'color-item';
 
-    // Muestra el código de color al lado del color
-    var colorCode = document.createElement('span');
-    colorCode.textContent = nuevoColor;
+      const colorCell = document.createElement('div');
+      colorCell.className = 'color-cell';
+      colorCell.style.backgroundColor = color;
 
-    // Crea un botón para eliminar el color
-    var eliminarBtn = document.createElement('button');
-    eliminarBtn.textContent = 'Eliminar';
-    eliminarBtn.className = 'eliminar-btn';
-    eliminarBtn.onclick = function() {
-      // Eliminar el color al hacer clic en el botón
-      tablaColoresBody.removeChild(nuevoColorDiv);
+      const textoColor = document.createTextNode(color);
 
-      // Ajusta la altura máxima del contenedor
-      var contenedor = document.querySelector('.gridAggPedido');
-      contenedor.style.maxHeight = (contenedor.scrollHeight - 30) + 'px';
-    };
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'Eliminar';
+      btnEliminar.addEventListener('click', function () {
+          listaColoresSeleccionados.removeChild(listItem);
+      });
 
-    // Agrega elementos al contenedor del color
-    nuevoColorDiv.appendChild(colorBox);
-    nuevoColorDiv.appendChild(colorCode);
-    nuevoColorDiv.appendChild(eliminarBtn);
+      listItem.appendChild(colorCell);
+      listItem.appendChild(textoColor);
+      listItem.appendChild(btnEliminar);
 
-    // Agrega el nuevo color al contenedor
-    tablaColoresBody.appendChild(nuevoColorDiv);
+      listaColoresSeleccionados.appendChild(listItem);
 
-    // Ajusta la altura máxima del contenedor para acomodar el nuevo color
-    var contenedor = document.querySelector('.gridAggPedido');
-    contenedor.style.maxHeight = (contenedor.scrollHeight + 30) + 'px'; // Ajusta según sea necesario
+      // Limpiar el valor seleccionado en el select
+      selectColores.value = '';
   }
+});

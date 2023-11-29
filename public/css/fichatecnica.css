@@ -5,31 +5,37 @@
 
 body{
     background-color: rgb(245, 245, 245);
+    
+      overflow-x: hidden;
+    
 }
 
 .containerAgregarPedido { /* Contenedor Padre */
     display: flex;
-    width: 1100px;
-    height: 1600px; /*1200px */
+    width: 990px;
+    height: 1300px; /*1200px */
     background-color: rgb(255, 255, 255);
     display: flex;
     margin-top: 55px;
-    margin-left: 250px;
+    margin-left: 130px;
     margin-bottom: 35px;
     border-radius: 10px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    
+   
    
    
 }
 
 .formularioInt  { /* Formulario estilos */
-    max-width: 100%;
+   width: 320px;
     height: 100%;
    align-items: center;
    justify-content: center;
    padding-top: 20px;
    padding-left: 12px;
    margin-right: 200px;
+ 
   
   
 }
@@ -42,7 +48,7 @@ body{
     margin-bottom: 40px;
     margin-top: 15px;
     font-weight: bold;
-    padding-left: 40px;
+    padding-left: 10px;
    
 }
 
@@ -69,13 +75,16 @@ body{
 }
 
 .row{ /* Contenedor Hijo */
-    width: 400px; /* 100px*/
-    height: 1035px;
+    width: 300px; /* 100px*/
+    height: 990px;
    margin-top: 20px;
-   margin-left:500;
+   margin-left:-1px;
    background-color: rgb(245, 245, 245);
    border-radius: 0 10px 0 10px;
    padding-top: 40px;
+    
+ 
+   
   
  
 }
@@ -114,6 +123,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px; 
+ 
    
     
 }
@@ -126,7 +136,8 @@ body{
 }
 
 .btnInput {
-    width: 300px;
+    width: 235px;
+   
 }
 
 .btnInput2.valido{
@@ -183,11 +194,15 @@ body{
 
 .row2{ /* Contenedor Hijo */
     width: 650px;
-    height:1200px;
-    margin-left: 400px;
-    margin-top: -1050px;
-   background-color: rgb(245, 245, 245);
+    height:990px;
+    margin-left: 300px;
+    margin-top: -990px;
+   ; 
    border-radius: 10px 0 10px 0;
+ 
+
+  
+   ;
  
  
    
@@ -206,6 +221,8 @@ body{
    padding-top: 15px;
    padding-bottom: 90px;
    padding-right: 50px;
+  
+   
    
 
    
@@ -213,45 +230,35 @@ body{
 
 .row4{ /* Contenedor Hijo */
  
-    width: 300px;
+    width: 280px;
     height: 300px;
-   margin-top: 10px;
-   margin-left:10px;
+   margin-top: 50px;
+   margin-left:-10px;
    padding-top: 15px;
    padding-bottom: 90px;
    padding-right: 30px;
    background-color: rgb(255, 255, 255);
    border-radius: 10px;
    border: 1px solid #e1e1e1;
+   
   
 }
 
-.row5{ /* Contenedor Hijo */
- 
-    width: 800px;
-    height: 240px;
-   margin-top: 20px;
-   margin-left:20px;
-   padding-top: 5px;
-   padding-bottom: 90px;
-   padding-right: 30px;
-   /* background-color: rgb(178, 56, 56);  */
-   border-radius: 10px;
- 
-}
+
 
 .rowTransaccion{ /* Contenedor Hijo */
  
-    width:670px;
+    width:640px;
     height: 450px;
-   margin-top: -90px;
-   margin-left:9px;
+   margin-top: -330px;
+   margin-left:12px;
    padding-top: 15px;
    padding-bottom: 90px;
    padding-right: 30px;
-    /* background-color: rgb(181, 68, 68);  */
    border-radius: 10px;
    border: 1px solid #e1e1e1;
+   background-color: rgb(245, 245, 245);
+
 }
 
 
@@ -269,6 +276,9 @@ body{
     margin-top: 40px;
     border-radius: 10px;
     border: 1px solid #e6e6e6;
+    
+  
+    
    
 }
 
@@ -281,6 +291,8 @@ body{
     overflow: hidden;
     border-radius: 10px;
     border: 1px solid #e1e1e1;
+  
+    
     
 }
 
@@ -288,7 +300,8 @@ body{
     width: 400px;
     height: 500px;
     display:flexbox;
-    /* background-color: blue; */
+    
+    
 }
 
 .contenedorImg2:disabled{
@@ -315,6 +328,7 @@ body{
     width: 30px;
     margin-left: 570px;
     margin-top: -8px;
+    
 }
 
 .imgAggComprobante {
@@ -333,12 +347,14 @@ body{
 
 .containerListarAgg { /* Contenedor Padre */
     width: 620px;
-    height: 500px;
-    background-color: rgb(255, 255, 255);
+    height: 520px;
+    background-color: rgb(245, 245, 245);
     display: flex;
     border-radius: 10px;
-    margin-top: -15px;
+    margin-top: 20px;
+    margin-left: 20px;
     border: 1px solid #e1e1e1;
+    /* background-color: #001eff; */
   
    
 
@@ -351,7 +367,7 @@ body{
 }
 
 .table-orientacion {
-    margin-top: 5px; 
+    margin-top: 40px; 
     width: 619px;
     background-color: #6b719d;
 }
@@ -509,6 +525,7 @@ body{
     margin-right: 100px;
     margin-top: 100px;
     margin-bottom: -40px;
+    
   
   }
   
@@ -583,8 +600,8 @@ body{
   .btnGuardar{
     position: absolute;
     display: flex ;
-     margin-left: 250px; 
-    margin-top: 70px;
+     margin-left: 400px; 
+    margin-top: 40px;
     background-color: #1f2553;
     color: #ffffff;
     font-weight: bold;
@@ -593,13 +610,96 @@ body{
 
 }
 .btnCancelar {
-    position: absolute;
-    display: flex ;
-     margin-left: 100px; 
-    margin-top: 70px;
-    background-color: #1f2553;
-    color: #ffffff;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+   
 
+  position: absolute;
+  display: flex ;
+  margin-left: 240px; 
+  margin-top: 40px;
+  background-color: #1f2553;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.btnCancelar:hover {
+  background-color: #e1e1e1;
+  color: #1f2553;
+}
+
+
+/*boton de estado*/
+.checkeo{
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.form-check-input {
+  position: relative;
+  width: 50px; /* Ancho del checkbox */
+  height: 18px; /* Altura del checkbox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #1f2553; /* Color del botón cuando no está marcado */
+  border: 1px solid #1f2553; /* Color del borde del botón cuando no está marcado */
+  border-radius: 50px; /* Asegura que el botón tenga forma de círculo */
+  transition: background-color 0.1s, border-color 0.1s;
+}
+.form-check-input:checked {
+  background-color: #008000; /* Color del botón cuando está marcado */
+  border-color: green; /* Color del borde del botón cuando está marcado */
+}
+.form-check-input::before {
+  content: '';
+  position: absolute;
+  width: 12px; /* Ancho del botón */
+  height: 12px; /* Altura del botón */
+  background-color: white; /* Color del botón */
+  border-radius: 50%; /* Asegura que el botón tenga forma de círculo */
+  left: 2.5px; /* Ajusta la posición del botón dentro del checkbox */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.1s;
+}
+.form-check-input:checked::before {
+  background-color: #008000; /* Cambia el color del botón cuando está marcado */
+}
+.form-check-input:checked:focus::before {
+  content: ''; /* Evita que aparezca un segundo círculo al hacer clic */
+}
+
+.form-check-input:focus {
+  box-shadow: none;  /* Evita el resplandor al hacer clic en el checkbox */
+}
+/*estilos de la tabla de talla*/
+.circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #646fc1;
+}
+.btnEditar{
+  position: absolute;
+  display: flex ;
+   margin-left: 550px; 
+  margin-top: 40px;
+  background-color: #1f2553;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.btnEditar:hover {
+  background-color: #e1e1e1;
+  color: #1f2553;
 }

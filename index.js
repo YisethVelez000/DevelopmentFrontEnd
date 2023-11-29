@@ -1,89 +1,195 @@
-const express = require('express')
-const path = require('path')//Trabajar con rutas
-const hbs = require('hbs')//Incorporar motor de plantillas
+const express = require('express');
+const path = require('path');
+const hbs = require('hbs');
 
-const app = express()
+const app = express();
+const port = 8383;
 
-const port = 8383
-
-//Servidor de contenido estático
-app.use(express.static('public'))
-
-//Ingeniería de las vistas: hbs
-//Asignar la ubicación de los archivos hbs
-app.set('views', path.join(__dirname+'/public/views'))
-app.set('view engine', 'hbs')
-
-//Configuración del directorio que guardará los archivos partials hbs
+app.use(express.static('public'));
+app.set('views', path.join(__dirname, '/public/views'));
+app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/public/views/partials');
 
 app.get('/', (req, res) => {
-    res.render('index')//Redireccionar hacia el archivo de hbs
-})
+    res.render('index');
+});
 
 app.get('/pedidos', (req, res) => {
-    res.render('listarPedido')//Redireccionar hacia el archivo de hbs
-})
+    res.render('listarPedido');
+});
+
+app.get('/login', (req, res) => {
+    res.render('login');
+});
 
 app.get('/proveedores', (req, res) => {
-    res.render('proveedores')
-})//Redireccionar hacia el archivo de hbs
+    res.render('proveedores');
+});
 
 app.get('/empleados', (req, res) => {
-    res.render('empleados')
-})//
+    res.render('empleados');
+});
+
 app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica')
-})//
-app.get('/editarfichatecnica', (req, res) => {
-    res.render('editarfichatecnica')
-})/
-app.get('/listarfichatecnica', (req, res) => {
-    res.render('listarfichatecnica')
-})/
+    res.render('fichatecnica');
+});
+
 app.get('/agregarPedido', (req, res) => {
-    res.render('agregarPedido')//Redireccionar hacia el archivo de hbs
+    res.render('agregarPedido')
 })
 
-app.get('/insumos', (req, res) => {
-    res.render('registrarInsumos')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/categoriaInsumos', (req, res) => {
-    res.render('registrarCatInsumos')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/cotizacion', (req, res) => {
-    res.render('cotizacion')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/listarCotizacion', (req, res) => {
-    res.render('listarCotizacion')//Redireccionar hacia el archivo de hbs
-})
-
-app.get('/vistaCotizacion', (req, res) => {
-    res.render('vistaCotizacion')//Redireccionar hacia el archivo de hbs
+app.get('/carritoProductos', (req, res) => {
+    res.render('carritoProductos')
 })
 
 app.get('/compras', (req, res) => {
-    res.render('compras')//Redireccionar hacia el archivo de hbs
-})
+    res.render('compras');
+});
 
-app.get('/visualizarCompra', (req, res) => {
-    res.render('visualizarCompra')//Redireccionar hacia el archivo de hbs
-})
+app.get('/cotizacion', (req, res) => {
+    res.render('cotizacion');
+});
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+});
 
 app.get('/editarCompra', (req, res) => {
-    res.render('editarCompra')//Redireccionar hacia el archivo de hbs
-})
+    res.render('editarCompra');
+});
 
+app.get('/editarfichatecnica', (req, res) => {
+    res.render('editarfichatecnica');
+});
 
+app.get('/listarfichatecnica', (req, res) => {
+    res.render('listarfichatecnica');
+});
+
+app.get('/insumos', (req, res) => {
+    res.render('registrarInsumos');
+});
+
+app.get('/categoriaInsumos', (req, res) => {
+    res.render('registrarCatInsumos');
+});
+
+app.get('/listarCotizacion', (req, res) => {
+    res.render('listarCotizacion');
+});
+
+app.get('/vistaCotizacion', (req, res) => {
+    res.render('vistaCotizacion');
+});
+
+app.get('/visualizarproveedor', (req, res) => {
+    res.render('visualizarproveedor');
+});
+
+app.get('/visualizarempleado', (req, res) => {
+    res.render('visualizarempleado');
+});
+
+app.get('/editarPedido', (req, res) => {
+    res.render('editarPedido');
+});
+
+app.get('/visualizarPedido', (req, res) => {
+    res.render('visualizarPedido');
+});
+
+app.get('/visualizarficha', (req, res) => {
+    res.render('visualizarficha');
+});
+
+app.get('/editarUsuario', (req, res) => {
+    res.render('editarUsuario');
+});
+
+app.get('/estampados', (req, res) => {
+    res.render('estampados');
+});
+
+app.get('/fichaTecnica', (req, res) => {
+    res.render('fichaTecnica');
+});
+
+app.get('/listarOrdenProduccion', (req, res) => {
+    res.render('listarOrdenProduccion');
+});
+
+app.get('/listarEmpleados', (req, res) => {
+    res.render('listarEmpleados');
+});
+
+app.get('/listarFichaTecnica', (req, res) => {
+    res.render('listarFichaTecnica');
+});
+
+app.get('/ordenProduccion', (req, res) => {
+    res.render('ordenProduccion');
+});
+
+app.get('/registrarCatInsumos', (req, res) => {
+    res.render('registrarCatInsumos');
+});
+
+app.get('/registrarInsumos', (req, res) => {
+    res.render('registrarInsumos');
+});
+
+app.get('/roles', (req, res) => {
+    res.render('roles');
+});
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+});
+
+app.get('/detalleRol', (req, res) => {
+    res.render('detalleRol');
+});
+
+app.get('/disenoEstampados', (req, res) => {
+    res.render('disenoEstampados');
+});
+
+app.get('/tamanoEstampados', (req, res) => {
+    res.render('tamanoEstampados');
+});
+
+app.get('/ventas', (req, res) => {
+    res.render('ventas');
+});
+
+app.get('/detalleVenta', (req, res) => {
+    res.render('detalleVenta');
+});
+
+app.get('/visualizarCompra', (req, res) => {
+    res.render('visualizarCompra');
+});
+
+app.get('/visualizarEmpleado', (req, res) => {
+    res.render('visualizarEmpleado');
+});
+
+app.get('/visualizarFicha', (req, res) => {
+    res.render('visualizarFicha');
+});
+
+app.get('/visualizarPedido', (req, res) => {
+    res.render('visualizarPedido');
+});
+
+app.get('/visualizarProveedor', (req, res) => {
+    res.render('visualizarProveedor');
+});
 
 app.get('*', (req, res) => {
-    //res.sendFile(__dirname+'/public/views/404.hbs')
-    res.render('404')//Redireccionar hacia el archivo de blade
-})
+    res.render('404');
+});
 
 app.listen(port, () => {
-    console.log(`http://localhost:${port}`)
-})
+    console.log(`http://localhost:${port}`);
+});

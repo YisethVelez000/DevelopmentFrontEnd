@@ -23,9 +23,8 @@
             <form class="d-flex" role="search">
                  <input class="form-control me-2 campo-search" type="search" placeholder="Buscar" aria-label="Search">    
                   <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
-                  <button class="btn btn-outline-secondary boton-search" type="submit"><img src="/assets/img/search.ico" alt="search"  class="icono-search"></button>
+                  <button class="btn btn-outline-secondary boton-search" type="submit"><img src="../img/search.ico" alt="search"  class="icono-search"></button>
             </form>
-
 
         </div>
 
@@ -63,145 +62,31 @@
                             <td class="datosListar">Revisión</td>
                             <td class="icons"> 
 
-                               <!--EDITAR -->
-                                <div>  
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
-                                    
-                                   <!-- Modal  EDITAR -->
-                                   <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-ancha" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
-                                          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button> -->
-                                        </div>
-                                        <div class="modal-body">
-                                          <!-- Contenido de la modal -->
+                                    <!--BOTONES SIN LA MODAL, ASÍ SE USARÁN NORMALMENTE--> 
+                                    <div> <a href="/editarPedido"> <img src="../img/pencil.ico" alt="" class="iconos-listar "></a></div>                             
+                                    <div> <a href="/visualizarPedido"> <img src="..//img/show.ico" alt="" class="iconos-listar "></a>  </div>
+                                    <div> <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar "></a>  </div>
 
-                                          <div class="containerModal"> <!--Contenedor Padre-->
-
-
-                                            <form class="formularioInt">
-                                               <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
-                                      
-                                                        <h1 class="textoh1">Pedidos</h1>
-                                      
-                                                      <div class="col-md-6">
-                                      
-                                                              <div class=" mb-4 form-group1">
-                                                                <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
-                                                                <input type="number" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1" placeholder="4401" disabled>
-                                                              </div>
-                                      
-                                                              <div class="  mb-4 form-group1">
-                                                                <label for="fechaPedido" class="form-label fontTtitle">Fecha Pedido <span class="text-danger">*</span></label>
-                                                                <input type="date" class="form-control" name="fechaPedido" id="fechaPedido">
-                                                                <div id="mensajeErrorFecha"></div>
-                                                              </div>
-                                      
-                                                              <div class=" mb-4 form-group1">
-                                                                <label for="exampleInputPassword1" class="form-label fontTtitle">Estado <span class="text-danger">*</span></label>
-                                                                <select class="form-select" aria-label="Default select example" required>
-                                                                  <option selected></option>
-                                                                  <option value="1">Pendiente</option>
-                                                                  <option value="2">Revisión</option>
-                                                                  <option value="3">Aprobado</option>
-                                                                  <option value="4">Rechazado</option>
-                                                                  <option value="5">Cancelado</option>
-                                                                </select>
-                                                              </div>
-                                      
-                                                      </div> 
-                                                      <div class="col-md-6">
-                                                        <div class=" mb-4 form-group1">
-                                                          <label for="nomCliente" class="form-label fontTtitle">Nombre Cliente <span class="text-danger">*</span></label>
-                                                          <input type="text" class="form-control btnInput" name="nomCliente" id="nomCliente" oninput="validarNombre()">
-                                                          <div id="mensajeError"></div>
-                                                        </div>
-                                      
-                                                        <div class=" mb-4 form-group1">
-                                                          <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago <span class="text-danger">*</span></label>
-                                                          <select class="form-select" aria-label="Default select example" required>
-                                                            <option selected></option>
-                                                            <option value="1">Bancolombia</option>
-                                                            <option value="2">Nequi</option>
-                                                            <option value="3">DaviPlata</option>
-                                                            <option value="4">Bbva</option>
-                                                            <option value="5">Pse</option>
-                                                          </select>
-                                                        </div>
-                                      
-                                                        
-                                                        <div class=" mb-4 form-group1">
-                                                          <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago <span class="text-danger">*</span></label>
-                                                          <input type="text" class="form-control btnInput" id="exampleInputPassword1">
-                                                        </div>
-                                                </div>  
-                                                  </div>
-                                                            </form>
-                                                       </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                          <button type="button" class="btn btnGuardar" onclick="modalClose()" data-bs-dismiss="modal">Guardar cambios</button>
-                                              
-                                        </div>
-                                      </div>
-                                    </div>
-
-
-                                     <!--Modal 2-->
-                                       <!-- Modal -->
-                                       <!-- <div class="modal fade " id="modalG" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                          <div class="modal-content modal2 ">
+                                    <div class="modal fade" id="confirmarEliminacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminacionModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
                                             <div class="modal-header">
-                                              <h5 class="modal-title" id="miModalLabel">Modal de Confirmación</h5>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <h5 class="modal-title" id="confirmarEliminacionModalLabel">Confirmar Eliminación</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
                                             <div class="modal-body">
-                                             ¡Datos actualizados correctamente!
+                                                ¿Estás seguro de que deseas eliminar este elemento?
                                             </div>
                                             <div class="modal-footer">
-                                              <button type="button"  id="guardarBoton" class="btn btn-primary" data-bs-dismiss="modal">Si, confirmar</button>
-                                            
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-danger" id="eliminarBtn">Eliminar</button>
                                             </div>
-                                          </div>
                                         </div>
-                                      </div> -->
-                                  <!--Fin modal2-->
-
-
-
-                                  </div>
-
-                                 
-
-                         
-                               <script>
-                                document.getElementById('btnAbrirModalG').addEventListener('click', function () {
-                                  $('#modalG').modal('show');
-                                });
-
-                                function modalClose() {
-                                  $('#miModal').modal('hide');
-                                }
-                              
-                              </script> 
-                              
-                                  </div>
-
-
-                                    <!--BOTONES SIN LA MODAL, ASÍ SE USARÁN NORMALMENTE--> 
-                                    <div> 
-                                        <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a>
                                     </div>
-
-                                        <div> 
-                                             <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a>
-                                        </div>
+                                </div>
+                                       
                             </td>
                           </tr>
 
@@ -214,101 +99,31 @@
                             <td class="datosListar">Aprobado</td>
                             <td class="icons"> 
 
-                              <!--EDITAR -->
-                              <div>  
-                                <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
-                                
-                               <!-- Modal  EDITAR -->
-                               <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
+                                <div> <a href="/editarPedido"> <img src="../img/pencil.ico" alt="" class="iconos-listar "></a></div>                             
+                                <div> <a href="/editarPedido"> <img src="..//img/show.ico" alt="" class="iconos-listar "></a> </div>
+                                 </div>
+                                <div> <a href="#" id="abrirModal"> <img src="../img/delete.ico" alt="" class="iconos-listar "></a> </div>
+
+                               <div class="modal fade" id="confirmarEliminacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminacionModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmarEliminacionModalLabel">Confirmar Eliminación</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Estás seguro de que deseas eliminar este elemento?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-danger" id="eliminarBtn">Eliminar</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                      <!-- Contenido de la modal -->
-
-                                      <div class="containerModal"> <!--Contenedor Padre-->
-
-
-                                        <form class="formularioInt">
-                                           <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
-                                  
-                                                    <h1 class="textoh1">Pedidos</h1>
-                                  
-                                                  <div class="col-md-6">
-                                  
-                                                          <div class="mb-3 ">
-                                                            <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
-                                                            <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
-                                                          </div>
-                                  
-                                                          <div class="mb-4 ">
-                                                            <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
-                                                            <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
-                                                          </div>
-                                  
-                                                          <div class="mb-4 form-group">
-                                                            <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
-                                                            <select class="form-select" aria-label="Default select example">
-                                                              <option selected></option>
-                                                              <option value="1">Pendiente</option>
-                                                              <option value="2">Revisión</option>
-                                                              <option value="3">Aprobado</option>
-                                                              <option value="4">Rechazado</option>
-                                                              <option value="5">Cancelado</option>
-                                                            </select>
-                                                          </div>
-                                  
-                                                  </div> 
-                                                  
-                                                  
-                                  
-                                                  <div class="col-md-6">
-                                                    <div class="mb-3 form-group">
-                                                      <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
-                                                      <input type="email" class="form-control btnInput" id="exampleInputText1">
-                                                    </div>
-                                  
-                                                    <div class="mb-4 form-group">
-                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
-                                                      <input type="password" class="form-control" id="exampleInputPassword1">
-                                                    </div>
-                                  
-                                                    
-                                                    <div class="mb-4 form-group">
-                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
-                                                      <input type="password" class="form-control" id="exampleInputPassword1">
-                                                    </div>
-                                  
-                                            </div>  
-                                  
-                                  
-                                              </div>
-
-                                                        </form>
-                                                        
-                                                   </div>
-
-
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                      <button type="button" class="btn btnGuardar">Guardar cambios</button>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
 
-                              </div>
-
-
-
-                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
-                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
                             </td>
 
                           </tr>
@@ -317,104 +132,34 @@
                             <td class="datosListar" >Jhon Muñoz</td>
                             <td class="datosListar">14/09/2023</td>
                             <td class="datosListar">Bancolombia</td>
-                            <td class="datosListar">100.000</td>
+                            <td class="datosListar">10
                             <td class="datosListar">Aprobado</td>
                             <td class="icons"> 
 
-                                <!--EDITAR -->
-                                <div>  
-                                  <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
-                                  
-                                 <!-- Modal  EDITAR -->
-                                 <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                      </div>
-                                      <div class="modal-body">
-                                        <!-- Contenido de la modal -->
+                                  <div> <a href="/editarPedido"> <img src="../img/pencil.ico" alt="" class="iconos-listar"></a></div>                             
+                                  <div> <a href="/editarPedido"> <img src="..//img/show.ico" alt="" class="iconos-listar "></a>  </div>
+                                  <div> <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar "></a>  </div>
 
-                                        <div class="containerModal"> <!--Contenedor Padre-->
-
-
-                                          <form class="formularioInt">
-                                             <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
-                                    
-                                                      <h1 class="textoh1">Pedidos</h1>
-                                    
-                                                    <div class="col-md-6">
-                                    
-                                                            <div class="mb-3 ">
-                                                              <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
-                                                              <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
-                                                            </div>
-                                    
-                                                            <div class="mb-4 ">
-                                                              <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
-                                                              <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
-                                                            </div>
-                                    
-                                                            <div class="mb-4 form-group">
-                                                              <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
-                                                              <select class="form-select" aria-label="Default select example">
-                                                                <option selected></option>
-                                                                <option value="1">Pendiente</option>
-                                                                <option value="2">Revisión</option>
-                                                                <option value="3">Aprobado</option>
-                                                                <option value="4">Rechazado</option>
-                                                                <option value="5">Cancelado</option>
-                                                              </select>
-                                                            </div>
-                                    
-                                                    </div> 
-                                                    
-                                                    
-                                    
-                                                    <div class="col-md-6">
-                                                      <div class="mb-3 form-group">
-                                                        <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
-                                                        <input type="email" class="form-control btnInput" id="exampleInputText1">
-                                                      </div>
-                                    
-                                                      <div class="mb-4 form-group">
-                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                                      </div>
-                                    
-                                                      
-                                                      <div class="mb-4 form-group">
-                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                                      </div>
-                                    
-                                              </div>  
-                                    
-                                    
-                                                </div>
-
-                                                          </form>
-                                                          
-                                                     </div>
-
-
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btnGuardar">Guardar cambios</button>
-                                      </div>
+                                                                 <div class="modal fade" id="confirmarEliminacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminacionModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmarEliminacionModalLabel">Confirmar Eliminación</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Estás seguro de que deseas eliminar este elemento?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-danger" id="eliminarBtn">Eliminar</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
 
-                                </div>
-
-
-                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
-                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
                             </td>
 
                           </tr>
@@ -428,101 +173,30 @@
                             <td class="datosListar">Revisión</td>
                             <td class="icons"> 
 
-                                <!--EDITAR -->
-                                <div>  
-                                  <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
-                                  
-                                 <!-- Modal  EDITAR -->
-                                 <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                      </div>
-                                      <div class="modal-body">
-                                        <!-- Contenido de la modal -->
+                                  <div> <a href="/editarPedido"> <img src="../img/pencil.ico" alt="" class="iconos-listar "></a></div>                             
+                                    <div> <a href="/editarPedido"> <img src="..//img/show.ico" alt="" class="iconos-listar "></a>  </div>
+                                    <div> <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar"></a>  </div>
 
-                                        <div class="containerModal"> <!--Contenedor Padre-->
-
-
-                                          <form class="formularioInt">
-                                             <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
-                                    
-                                                      <h1 class="textoh1">Pedidos</h1>
-                                    
-                                                    <div class="col-md-6">
-                                    
-                                                            <div class="mb-3 ">
-                                                              <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
-                                                              <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
-                                                            </div>
-                                    
-                                                            <div class="mb-4 ">
-                                                              <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
-                                                              <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
-                                                            </div>
-                                    
-                                                            <div class="mb-4 form-group">
-                                                              <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
-                                                              <select class="form-select" aria-label="Default select example">
-                                                                <option selected></option>
-                                                                <option value="1">Pendiente</option>
-                                                                <option value="2">Revisión</option>
-                                                                <option value="3">Aprobado</option>
-                                                                <option value="4">Rechazado</option>
-                                                                <option value="5">Cancelado</option>
-                                                              </select>
-                                                            </div>
-                                    
-                                                    </div> 
-                                                    
-                                                    
-                                    
-                                                    <div class="col-md-6">
-                                                      <div class="mb-3 form-group">
-                                                        <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
-                                                        <input type="email" class="form-control btnInput" id="exampleInputText1">
-                                                      </div>
-                                    
-                                                      <div class="mb-4 form-group">
-                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                                      </div>
-                                    
-                                                      
-                                                      <div class="mb-4 form-group">
-                                                        <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                                      </div>
-                                    
-                                              </div>  
-                                    
-                                    
-                                                </div>
-
-                                                          </form>
-                                                          
-                                                     </div>
-
-
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        <button type="button" class="btn btnGuardar">Guardar cambios</button>
-                                      </div>
+                                                                       <div class="modal fade" id="confirmarEliminacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminacionModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmarEliminacionModalLabel">Confirmar Eliminación</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Estás seguro de que deseas eliminar este elemento?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-danger" id="eliminarBtn">Eliminar</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
 
-                                </div>
-
-
-
-                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
-                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
                             </td>
                           </tr>
 
@@ -534,102 +208,30 @@
                             <td class="datosListar">20.000</td>
                             <td class="datosListar">Cancelado</td>
                             <td class="icons"> 
+                                        <div>    <a href="/editarPedido"> <img src="../img/pencil.ico" alt="" class="iconos-listar "></a></div>
+                                        <div>   <a href="/agregarPedido"> <img src="../img/show.ico" alt="" class="iconos-listar "></a></div>
+                                        <div>    <a href=""> <img src="../img/delete.ico" alt="" class="iconos-listar "></a></div>
 
-                               <!--EDITAR -->
-                               <div>  
-                                <button type="button" class="btn" data-toggle="modal" data-target="#miModal"> <img src="/assets/img/pencil.ico" alt="" class="iconos-listar"> </button> 
-                                
-                               <!-- Modal  EDITAR -->
-                               <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title fontTtitle" id="exampleModalLabel">EDITAR PEDIDO</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
+                                                                             <div class="modal fade" id="confirmarEliminacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmarEliminacionModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="confirmarEliminacionModalLabel">Confirmar Eliminación</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Estás seguro de que deseas eliminar este elemento?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-danger" id="eliminarBtn">Eliminar</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                      <!-- Contenido de la modal -->
-
-                                      <div class="containerModal"> <!--Contenedor Padre-->
-
-
-                                        <form class="formularioInt">
-                                           <div class="row"> <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
-                                  
-                                                    <h1 class="textoh1">Pedidos</h1>
-                                  
-                                                  <div class="col-md-6">
-                                  
-                                                          <div class="mb-3 ">
-                                                            <label for="exampleInputText1" class="form-label fontTtitle">Num Pedido</label>
-                                                            <input type="email" class="form-control btnInput" name="exampleInputText1" id="exampleInputText1">
-                                                          </div>
-                                  
-                                                          <div class="mb-4 ">
-                                                            <label for="exampleInputText2" class="form-label fontTtitle">Fecha Pedido</label>
-                                                            <input type="password" class="form-control" name="exampleInputText2" id="exampleInputText2">
-                                                          </div>
-                                  
-                                                          <div class="mb-4 form-group">
-                                                            <label for="exampleInputPassword1" class="form-label fontTtitle">Estado</label>
-                                                            <select class="form-select" aria-label="Default select example">
-                                                              <option selected></option>
-                                                              <option value="1">Pendiente</option>
-                                                              <option value="2">Revisión</option>
-                                                              <option value="3">Aprobado</option>
-                                                              <option value="4">Rechazado</option>
-                                                              <option value="5">Cancelado</option>
-                                                            </select>
-                                                          </div>
-                                  
-                                                  </div> 
-                                                  
-                                                  
-                                  
-                                                  <div class="col-md-6">
-                                                    <div class="mb-3 form-group">
-                                                      <label for="exampleInputText1" class="form-label fontTtitle">Nombre Cliente</label>
-                                                      <input type="email" class="form-control btnInput" id="exampleInputText1">
-                                                    </div>
-                                  
-                                                    <div class="mb-4 form-group">
-                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Forma Pago</label>
-                                                      <input type="password" class="form-control" id="exampleInputPassword1">
-                                                    </div>
-                                  
-                                                    
-                                                    <div class="mb-4 form-group">
-                                                      <label for="exampleInputPassword1" class="form-label fontTtitle">Total Pago</label>
-                                                      <input type="password" class="form-control" id="exampleInputPassword1">
-                                                    </div>
-                                  
-                                            </div>  
-                                  
-                                  
-                                              </div>
-
-                                                        </form>
-                                                        
-                                                   </div>
-
-
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                      <button type="button" class="btn btnGuardar">Guardar cambios</button>
-                                    </div>
-                                  </div>
                                 </div>
-                              </div>
 
-                              </div>
-
-
-
-                                    <div>   <a href="/agregarPedido.html"> <img src="/assets/img/show.ico" alt="" class="iconos-listar img-show"></a></div>
-                                        <div>    <a href=""> <img src="/assets/img/delete.ico" alt="" class="iconos-listar img-delete"></a></div>
                             </td>
                           </tr>
                         </tbody>
@@ -652,17 +254,19 @@
             
     </div>
 
-{{> footer }}
+
 
   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-<script src="../js/listarPedido.js"></script>
-<script src="../js/validarFormularioPedido.js"></script>
+    <script src="../js/listarPedido.js"></script>
+    <script src="../js/validarFormularioPedido.js"></script>
+
+
+    {{> footer }}
 </body>
 </html>
