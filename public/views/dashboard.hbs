@@ -97,10 +97,27 @@
                                 <div class="col-8">
                                     <div class="numbers">
                                         <div class="form-group">
-                                            <label for="calendario">Seleccionar Mes</label>
-                                            <input type="date">
+                                            <label for="calendario">Seleccionar mes y año</label>
+                                            <select id="mes" name="mes">
+                                                <option value="" disabled selected>Mes</option>
+                                                <option value="01">Enero</option>
+                                                <option value="02">Febrero</option>
+                                                <option value="03">Marzo</option>
+                                                <option value="04">Abril</option>
+                                                <option value="05">Mayo</option>
+                                                <option value="06">Junio</option>
+                                                <option value="07">Julio</option>
+                                                <option value="08">Agosto</option>
+                                                <option value="09">Septiembre</option>
+                                                <option value="10">Octubre</option>
+                                                <option value="11">Noviembre</option>
+                                                <option value="12">Diciembre</option>
+                                            </select>
+
+                                            <select id="year" name="year">
+                                                <option value="" disabled selected>Año</option>
+                                            </select>
                                         </div>
-                                        
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
@@ -240,6 +257,20 @@
     <script src="js/chartjs.min.js"></script>
 
     <script>
+var yearSelect = document.getElementById("year");
+
+    var currentYear = new Date().getFullYear();
+
+    var startYear = currentYear;
+    var endYear = currentYear - 10;
+
+    for (var year = startYear; year >= endYear; year--) {
+        var option = document.createElement("option");
+        option.value = year;
+        option.text = year;
+        yearSelect.add(option);
+    }
+
         var ctx1 = document.getElementById("chart-line-1").getContext("2d");
 
         var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
