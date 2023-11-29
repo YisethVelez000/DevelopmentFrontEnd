@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/assets/carritoProducto.css">
+
+
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  </style>
+
+    <title>Registrar Insumo</title>
+</head>
+<body class="bodybg">
+
+<div class="container"> <!--Contenedor Padre-->
+
+
+    <form class="formularioInt">
+      <!--Contenedor Hijo (AQUÍ ESTÁ NETAMENTE EL FORMULARIO)-->
+
+               <h1 class="textoh1">Carrito Producto</h1>
+
+
+               <div class="row1">
+                <img src="/assets/img/show.ico" alt="" class="imgShow">
+                <button class="botonImgcancelar" ><img src="/assets/img/cancel.ico" class="imgCancelar" > </button>
+
+                <div class="posicionInfo">
+                  <h3 class="fontTtitle">Camisa Overzise</h3>
+                  <div class="parrafoDown fontTtitle">
+                  <p>$40.000 / Producto Base</p> 
+
+                  <!-- <div class="container mt-5 tamaño">
+
+                  </div> -->
+
+                </div>
+                </div>
+
+                <div class="contenedorImg">
+                  <img src="/assets/img/hoodie.png" alt="hoodie" class="imgProducto">
+              </div>
+
+                <!-- Contenedor de la cantidad -->
+                <div class="container2 custom-container">
+                  <div class="input-group">
+
+                    <!-- Botón de disminuir cantidad -->
+                    <div class="input-group-prepend">
+                      <button class="btn custom-btn" type="button" onclick="decreaseQuantity()">-</button>
+                    </div>
+                    
+                    <!-- Entrada de cantidad -->
+                    <input type="number" id="quantity" class="custom-input" value="1" min="1">
+
+                    <!-- Botón de aumentar cantidad -->
+                    <div class="input-group-append">
+                      <button class="btn custom-btn " type="button" onclick="increaseQuantity()">+</button>
+                    </div>
+                  </div>
+                </div>
+
+              
+
+              </div> 
+
+
+
+
+              
+              <div class="row2">
+                <img src="/assets/img/show.ico" alt="" class="imgShow">
+                <button class="botonImgcancelar" ><img src="/assets/img/cancel.ico" class="imgCancelar" > </button>
+
+                <div class="posicionInfo">
+                  <h3 class="fontTtitle">Camisa Overzise</h3>
+                  <div class="parrafoDown fontTtitle">
+                  <p>$40.000 / Producto Base</p> 
+
+                  <!-- <div class="container mt-5 tamaño">
+
+                  </div> -->
+
+                </div>
+                </div>
+
+                <div class="contenedorImg">
+                  <img src="/assets/img/hoodie.png" alt="hoodie" class="imgProducto">
+              </div>
+
+                <!-- Contenedor de la cantidad -->
+                <div class="container2 custom-container">
+                  <div class="input-group">
+
+                    <!-- Botón de disminuir cantidad -->
+                    <div class="input-group-prepend">
+                      <button class="btn custom-btn" type="button" onclick="decreaseQuantity()">-</button>
+                    </div>
+                    
+                    <!-- Entrada de cantidad -->
+                    <input type="number" id="quantity" class="custom-input" value="1" min="1">
+
+                    <!-- Botón de aumentar cantidad -->
+                    <div class="input-group-append">
+                      <button class="btn custom-btn " type="button" onclick="increaseQuantity()">+</button>
+                    </div>
+                  </div>
+                </div>
+
+              
+
+              </div> 
+              <!-- <div class="row2">   </div> 
+         
+        <button type="button" class="btn btnLimpiar" id="btnLimpiar" onclick="limpiarCarrito()">Limpiar</button>
+       <button type="button" class="btn btnCancelar">Cancelar</button>
+       <button type="button" class="btn btnGuardar" onclick="validarFormulario()">Guardar cambios</button>  -->
+
+       <p class="texto">2 Productos</p>
+       <img src="/assets/img/delete.ico" alt="delete" class="imgborrarProductos">
+
+
+
+    </form>
+
+                   
+ </div>
+        <div class="precios">
+                  <div class="container1precio">
+                    <p>Subtotal: 210.000</p> 
+                  </div> 
+                    <div class="container1precio2">
+                      <p>Total: 210.000</p>
+                    </div>
+        </div>
+
+        <div class="containerpagos">
+          <button type="button" class="botonPago">Ir a pagar</button>
+        </div>
+
+        <div class="containerSeguirCompras">
+          <button type="button" class="botonSeguirCompras">Seguir Comprando</button>
+        </div>
+
+                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                 <script src="/assets/validaciones/carritoProducto.js"></script>
+ </body>
+ </html>

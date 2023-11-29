@@ -26,6 +26,10 @@ app.get('/agregarPedido', (req, res) => {
     res.render('agregarPedido')
 })
 
+app.get('/carritoProductos', (req, res) => {
+    res.render('carritoProductos')
+})
+
 app.get('/compras', (req, res) => {
     res.render('compras')
 })
