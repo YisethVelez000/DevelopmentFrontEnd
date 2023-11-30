@@ -4,19 +4,20 @@
 }
 
 body{
-  background-color: rgb(187, 34, 34);
+  background-color: rgb(245, 245, 245);
 }
 
 .container { /* Contenedor Padre */
   display: flex;
   width: 750px;
   height: 440px;
-  background-color: rgb(192, 32, 32);
+  background-color: rgb(255, 255, 255);
   display: flex;
-  margin-top: 120px;
-  margin-left: 10%;
+  margin-top: 100px;
+  margin-left: 15%;
   border-radius: 10px;
-  box-shadow: 0 0 10px 2px #00000033;
+  box-shadow: 0 0 11px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 90px;
 }
 
 
@@ -171,7 +172,7 @@ border-radius: 10px;
 .posicionInfo{
   position: absolute;
   /* background-color:aqua; */
-  width: 600px;
+  width: 500px;
   height: 60px;
   margin-top: 5px;
   margin-left: 190px;
@@ -190,14 +191,6 @@ border-radius: 10px;
   margin-left: 400px;
 }
 
-  a.posicionUser{
-  
-  padding: 0 !important;
-  /* padding-top:50px;
-  width: 80px;
-  height: 50px;
-  background-color: #3b3d4e; */
-}
 
 
 .tamaño {
@@ -261,19 +254,20 @@ border-radius: 10px;
 .precios {
   display: flex;
   width: 290px;
-  height: 140px;
-  margin-top: -400px;
-  margin-left: 950px;
+  height: 150px;
+  margin-top: 40px;
+  margin-left:50px;
   border-radius: 10px;
   border: 2px solid #e8e8e8;
-  background-color: #fff;
+  background-color: #ffffff;
   grid-template-columns: 1fr 1fr;
 }
 
-.container1precio {
+.containerprecio {
+  position: absolute;
   background-color: rgb(245, 245, 245);
-  border-radius: 10px 10px 0 0 ;
-  width: 100%;
+  border-radius: 10px 10px 0 0;
+  width: 287px;
   height: 70px;
   font-family: 'Montserrat', sans-serif;
   color: #1f2553;
@@ -287,9 +281,9 @@ border-radius: 10px;
 }
 
 
-.container1precio2 {
+.containerprecio2 {
   position: absolute;
-  /* background-color: rgb(192, 38, 38); */
+  background-color: rgb(255, 255, 255);
   width: 287px;
   height: 70px;
   margin-top: 67px;
@@ -306,27 +300,17 @@ border-radius: 10px;
 
  .containerpagos {
   display: flex;
-  width: 290px;
+  /* width: 490px; */
   height: 50px;
-  margin-top: 10px;
-  margin-left: 950px;
+  margin-top: 160px;
+  /* margin-left: 10px; */
   border-radius: 10px;
-  background-color: #fff;
+  /* background-color: #fff; */
   grid-template-columns: 1fr 1fr;
 }
 
 .botonPago {
-  width: 100%;
-  background-color: #1f2553;
-  border-radius: 10px;
-  border: 2px solid rgb(229, 229, 229);
-  color: #fff;
-  font-family: 'Montserrat', sans-serif; 
-  font-size: 15pt;
-  font-weight: 700;
-}
- .botonPago:hover {
-  width: 100%;
+  width: 286px;
   background-color: #ffffff;
   border-radius: 10px;
   border: 2px solid #1f2553;
@@ -335,20 +319,30 @@ border-radius: 10px;
   font-size: 15pt;
   font-weight: 700;
 }
+.botonPago:hover {
+  width: 286px;
+  background-color: #1f2553;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 15pt;
+  font-weight: 700;
+}
 
 .containerSeguirCompras {
   display: flex;
-  width: 290px;
+  /* width: 290px; */
   height: 50px;
-  margin-top: 10px;
-  margin-left: 950px;
+  margin-top: 225px;
+  margin-left: -285px;   
   border-radius: 10px;
   background-color: #fff;
   grid-template-columns: 1fr 1fr;
 }
 
 .botonSeguirCompras {
-  width: 100%;
+  width: 286px;
   background-color: #ffffff;
   border-radius: 10px;
   border: 2px solid #1f2553;
@@ -359,7 +353,7 @@ border-radius: 10px;
 }
 
 .botonSeguirCompras:hover {
-  width: 100%;
+  width: 286px;
   background-color: #1f2553;
   border-radius: 10px;
   border: 2px solid #ffffff;

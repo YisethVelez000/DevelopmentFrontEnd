@@ -113,19 +113,41 @@ function validarNumPedido() {
   var inputNumPedido = document.getElementById('numPedido');
   var mensajeErrorNumPedido = document.getElementById('mensajeErrorNumPedido');
 
-  var regex = /^[1-9]\d{0,3}$/;
+  var regex = /^[1-9]\d{3,}$/;
 
   if (regex.test(inputNumPedido.value)) {
-    inputNumPedido.classList.remove('invalido2');
-    inputNumPedido.classList.add('valido2');
+    inputNumPedido.classList.remove('invalido');
+    inputNumPedido.classList.add('valido');
     mensajeErrorNumPedido.textContent = '';
   } else {
-    inputNumPedido.classList.remove('valido2');
-    inputNumPedido.classList.add('invalido2');
+    inputNumPedido.classList.remove('valido');
+    inputNumPedido.classList.add('invalido');
     mensajeErrorNumPedido.style.color = 'red';
     mensajeErrorNumPedido.textContent = 'Solo 4 números.';
   }
 }
+
+
+function validarTotalPedido() {
+  var inputTotalPedido = document.getElementById('totalPedido');
+  var mensajeErrorTotalPedido = document.getElementById('mensajeErrorTotalPedido');
+
+  var regex = /^[1-9]\d{0,3}$/;
+
+  if (regex.test(inputTotalPedido.value)) {
+    inputTotalPedido.classList.remove('invalido2');
+    inputTotalPedido.classList.add('valido2');
+    mensajeErrorTotalPedido.textContent = '';
+  } else {
+  inputTotalPedido.classList.add('invalido2');
+  inputTotalPedido.classList.remove('valido2');
+  mensajeErrorTotalPedido.style.color = 'red';
+  mensajeErrorTotalPedido.textContent = 'Solo 4 números.';
+  }
+}
+
+
+
 
 
 function validarDireccion() {
@@ -135,12 +157,12 @@ function validarDireccion() {
   var regex = /^(?!\s*$)[a-zA-Z0-9\s\-\/#]{11,}$/;
 
   if (regex.test(inputDireccion.value)) {
-    inputDireccion.classList.remove('invalido2');
-    inputDireccion.classList.add('valido2');
+    inputDireccion.classList.remove('invalido');
+    inputDireccion.classList.add('valido');
     mensajeErrorDireccion.textContent = '';
   } else {
-    inputDireccion.classList.remove('valido2');
-    inputDireccion.classList.add('invalid2o');
+    inputDireccion.classList.remove('valido');
+    inputDireccion.classList.add('invalido');
     mensajeErrorDireccion.style.color = 'red';
     mensajeErrorDireccion.textContent = 'Ingrese una dirección con al menos 11 caracteres.';
   }

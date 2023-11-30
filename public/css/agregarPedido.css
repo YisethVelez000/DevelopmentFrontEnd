@@ -20,6 +20,13 @@ body{
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* 
+.container2 {
+    width: 100%;
+    height: 100px;
+    background-color: #34ed5f;
+} */
+
 .formularioInt  { /* Formulario estilos */
     max-width: 100%;
     height: 100%;
@@ -79,6 +86,15 @@ body{
     white-space: nowrap;
 }
 
+.fontTtitleIva{ /*Textos para los campos  */
+    font-family: 'Montserrat', sans-serif;
+    color: #1f2553;
+    white-space: nowrap;
+    margin-left:-65px;
+    margin-top: 5px;
+    padding-right: 10px;
+}
+
 .fontTtitleAggPedido{ /*Textos para los campos  */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -130,6 +146,20 @@ body{
     border: 1px solid #dc3545;
 }
 
+.btnInput2 {
+    width: 180px;
+}
+
+.btnInput2.valido {
+    border: 1px solid #34ed5f;
+}
+
+/* Estilo para entrada inválida */
+.btnInput2.invalido {
+    border: 1px solid #dc3545;
+}
+
+
 #mensajeError {
     color: #dc3545;
     font-size: 0.875rem;
@@ -165,10 +195,31 @@ body{
     white-space: nowrap;
 }
 
+/* info ped*/
 
-.btnInput2 {
-    width: 180px;
+#mensajeErrorNumPedido {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    white-space: nowrap;
 }
+
+#mensajeErrorTotalPedido {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+#mensajeErrorDireccion {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+
+
 
 
 
@@ -213,14 +264,14 @@ body{
 
 .row5{ /* Contenedor Hijo */
  
-    width: 690px;
-    height: 240px;
+    width: 620px;
+    height: 200px;
    margin-top: 20px;
    margin-left:20px;
-   padding-top: 5px;
-   padding-bottom: 90px;
+   /* padding-top: 5px;
+   padding-bottom: 90px; */
    padding-right: 30px;
-   /* background-color: rgb(178, 56, 56); */
+   background-color: rgb(255, 255, 255);
    border-radius: 10px;
  
 }
@@ -316,12 +367,11 @@ body{
 .containerListarAgg { /* Contenedor Padre */
     width: 620px;
     height: 200px;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(0, 194, 87);    */
     display: flex;
     border-radius: 10px;
-    margin-top: -15px;
+    margin-top: -5px;
     border: 1px solid #e1e1e1;
-
   
 }
 
@@ -456,3 +506,25 @@ body{
     border: 1px solid rgb(255, 255, 255);
   }
 
+/* .labels {
+    margin-top: 1070px;
+    padding-top: 5px;
+    margin-left: -150px;
+    width:180px;
+    height: 50px;
+} */
+
+
+.form-container {
+    margin-top: 1070px;
+    padding-top: 5px;
+    margin-left: -90px;
+    /* background-color: #00ff3c; */
+    display: flex;
+}
+
+.labels {
+    width: 180px;
+    height: 50px;
+    margin-right: 10px; /* Ajusta el margen entre los elementos si es necesario */
+}

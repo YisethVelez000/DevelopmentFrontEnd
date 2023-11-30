@@ -67,7 +67,7 @@
 
                       
         <div class="">
-          <a href="/agregarPedido.html"><button type="button" class="btn btn-light more">Cancelar</button> </a> 
+          <a href="/pedidos"><button type="button" class="btn btn-light more">Cancelar</button> </a> 
        </div>
 
        <div class="">
@@ -96,8 +96,8 @@
                          </div>
 
                          <div class="p-1 mb-6  form-group">
-                            <label for="nomInsumo" class="form-label fontTtitle">Total Pedido <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control btnInput2" name="nomInsumo" id="nomInsumo" oninput="validarTotalPedido()">
+                            <label for="totalPedido" class="form-label fontTtitle">Total Pedido <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control btnInput2" name="totalPedido" id="totalPedido" oninput="validarTotalPedido()">
                             <div id="mensajeErrorTotalPedido"></div>
                          </div> 
 
@@ -295,7 +295,7 @@
             
                         </div>
                         
-                </div>
+                </div>    <!--Fin listado Productos -->
 
 
 
@@ -313,7 +313,29 @@
          <button type="button" class="btn btnCancelar">Cancelar</button>
          <button type="button" class="btn btnGuardar" onclick="validarFormulario()">Guardar cambios</button> -->
                    </form>
-                      
+
+
+                  <div class="form-container">
+                       <label for="nomCliente" class="form-label fontTtitleIva">Iva 19%</label>
+
+                      <div class="labels">
+                          <input type="text" class="form-control btnInput2" name="numPedido" id="numPedido"  oninput="validarNumPedido()" value="Subtotal" disabled>
+                          <div id="mensajeErrorNumPedido"></div>
+                      </div>
+
+                      <div class="labels">
+                          <input type="text" class="form-control btnInput2" name="numPedido" id="numPedido"  oninput="validarNumPedido()" value="Monto Iva" disabled>
+                          <div id="mensajeErrorNumPedido"></div>
+                      </div>
+
+                      <div class="labels">
+                          <input type="text" class="form-control btnInput2" name="numPedido" id="numPedido"  oninput="validarNumPedido()" value="Total" disabled>
+                          <div id="mensajeErrorNumPedido"></div>
+                      </div>
+                  <!-- Agrega más inputs aquí si es necesario -->
+                 </div>
+
+      
                  </div>
 
                  {{> footer }}
