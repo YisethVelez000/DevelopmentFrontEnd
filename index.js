@@ -78,6 +78,10 @@ app.get('/listarCotizacion', (req, res) => {
     res.render('listarCotizacion');
 });
 
+app.get('/listarCatalogo', (req, res) => {
+    res.render('listarCatalogo');
+});
+
 app.get('/vistaCotizacion', (req, res) => {
     res.render('vistaCotizacion');
 });
@@ -112,6 +116,18 @@ app.get('/estampados', (req, res) => {
 
 app.get('/fichaTecnica', (req, res) => {
     res.render('fichaTecnica');
+});
+
+app.get('/formularioCatalogo', (req, res) => {
+    res.render('formularioCatalogo');
+});
+
+app.get('/formularioCatalogoEditar', (req, res) => {
+    res.render('formularioCatalogoEditar');
+});
+
+app.get('/formularioCatalogoVisua', (req, res) => {
+    res.render('formularioCatalogoVisua');
 });
 
 app.get('/listarOrdenProduccion', (req, res) => {
@@ -168,6 +184,26 @@ app.get('/detalleVenta', (req, res) => {
 
 app.get('/visualizarCompra', (req, res) => {
     res.render('visualizarCompra');
+});
+
+app.get('/vistaCatalogoCli', (req, res) => {
+    res.render('vistaCatalogoCli');
+});
+
+app.get('/ubicacionEstVis', (req, res) => {
+    res.render('ubicacionEstVis');
+});
+
+app.get('/productoBaseVista', (req, res) => {
+    res.render('productoBaseVista');
+});
+
+app.get('/personalizacion', (req, res) => {
+    res.render('personalizacion');
+});
+
+app.get('/visualizarCotizacion', (req, res) => {
+    res.render('visualizarCotizacion');
 });
 
 app.get('/visualizarEmpleado', (req, res) => {
