@@ -186,6 +186,9 @@ app.get('/visualizarProveedor', (req, res) => {
     res.render('visualizarProveedor');
 });
 
+app.get('/editarProduccion', (req, res) => {
+    res.render('editarOrdenProduccion');
+});
 app.get('*', (req, res) => {
     res.render('404');
 });
