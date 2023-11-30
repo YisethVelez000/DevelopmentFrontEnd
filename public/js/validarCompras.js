@@ -117,3 +117,61 @@ function validarTotal() {
         mensajeError.textContent = 'Ingrese un total válido.';
     }
 }
+
+
+
+//modal
+
+ // Abre la modal al hacer clic en el enlace
+ $("#abrirModal").click(function() {
+    $("#modalAnulacion").modal("show");
+});
+
+// Puedes agregar lógica adicional aquí al confirmar la anulación
+$("#confirmarAnulacion").click(function() {
+    // Aquí puedes agregar la lógica para anular la compra
+    // Por ejemplo, puedes realizar una solicitud AJAX al servidor
+    // y luego cerrar la modal si la anulación fue exitosa
+    $("#modalAnulacion").modal("hide");
+});
+
+//tabla insumos
+function searchTable() {
+    // Aquí va tu código para buscar en la tabla
+}
+
+function eliminarInsumo(id) {
+    var table = document.getElementById("insumos-table");
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        var rowData = row.getElementsByTagName("td");
+
+        // Verifica si el primer dato de la fila es igual al ID proporcionado
+        if (rowData[0].innerText === "Insumo " + id) {
+            row.remove();
+            console.log("Insumo con ID", id, "eliminado.");
+            break;
+        }
+    }
+}
+
+function agregarInsumo() {
+    var input = document.getElementById("add-input");
+    var insumo = input.value;
+
+    if (insumo !== "") {
+        var table = document.getElementById("insumos-table");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+
+        cell1.innerHTML = insumo;
+        cell2.innerHTML = '<button onclick="eliminarInsumo()">Eliminar</button>';
+
+        console.log("Insumo agregado:", insumo);
+
+        input.value = ""; // Limpia el campo de entrada
+    }
+}
