@@ -84,6 +84,9 @@ app.get('/visualizarficha', (req, res) => {
 app.get('/editarUsuario', (req, res) => {
     res.render('editarUsuario');
 });
+app.get('/empleados', (req, res) => {
+    res.render('empleados');
+});
 
 app.get('/estampados', (req, res) => {
     res.render('estampados');
