@@ -11,7 +11,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centro los elementos horizontalmente */
-    width: 820px;
+    width: 2000px;
+    height: 1100px;
     background-color: rgb(255, 255, 255);
     margin-top: 35px;
     border-radius: 10px;
@@ -69,7 +70,8 @@ body {
     border-radius: 10px;
     padding: px 30px;
     cursor: pointer;
-    margin-left: 200px;
+    margin-left: 450px;
+    margin-top: -190px;
 }
 
 .btnGuardar {
@@ -78,7 +80,8 @@ body {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     border: none;
-    margin-right: 200px;
+    margin-left: 20px;
+    margin-top: -190px;
 }
 .btnGuardar:hover,
 .btnCancelar:hover {
@@ -98,23 +101,6 @@ body {
     margin-bottom: 90px; /* Ajusta según sea necesario */
 }
 
-.btnAgregar,
-.btnEliminar {
-    background-color: #dadceb;
-    color: #f7f7f7;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 12px;
-    padding: 2px 16px;
-    cursor: pointer;
-}
-
-.btnAgregar:hover,
-.btnEliminar:hover {
-    background-color: rgb(234, 234, 234);
-    color: #1a2cb9;
-}
 
 
 body {
@@ -170,6 +156,7 @@ h1 {
 
 
 
+
 .btnInput {
     border: 1px solid #ced4da;
 }
@@ -192,7 +179,7 @@ h1 {
     margin-top: 0.25rem;
 }
 
-#mensajeErrorCliente {
+#mensajeErrorNoCotizacion {
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
@@ -200,25 +187,137 @@ h1 {
 }
 
 
-#mensajeErrorProducto{
+#mensajeErrorFormaPago{
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
 
 }
 
-#mensajeErrorCantidadII{
+#mensajeErrorOrdenPedido{
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
 
 }
 
-#mensajeErrorDescripcion{
+#mensajeErrorRazonSocial{
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
 
 }
+#mensajeErrorNitDocumento{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorTelefono{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorDireccion{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorCorreo{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorProductoCot{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorValorUnitario{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorValorTotal{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorSubTotal{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorIva{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorTotal{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorReteIva{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorRetencion{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+#mensajeErrorValorPagar{
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+
+}
+
+.total-container {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: -635px;
+    margin-right: 430px;
+    width: 320px;
+   
+}
+
+.cliente-container{
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-left: 460px;
+    width: 320px;
+}
+
 
 

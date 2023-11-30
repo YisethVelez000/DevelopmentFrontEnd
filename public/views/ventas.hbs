@@ -3,72 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ventas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilosGenericos.css">
-    <style>
-        .row {
-            margin-left: 10px;
-            margin-top: 0;
-            padding-top: 0%;
-
-        }
-
-        .container-fluid {
-            margin-top: 0;
-            padding-top: 0%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        .form-check-input {
-            position: relative;
-            width: 50px;
-            height: 18px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            outline: none;
-            cursor: pointer;
-            background-color: #1f2553;
-            border: 1px solid #1f2553;
-            border-radius: 50px;
-            transition: background-color 0.1s, border-color 0.1s;
-        }
-
-        .form-check-input:checked {
-            background-color: #008000;
-            border-color: green;
-        }
-
-        .form-check-input::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            border-radius: 50%;
-            left: 2.5px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: background-color 0.1s;
-        }
-
-        .form-check-input:checked::before {
-            background-color: #008000;
-        }
-
-        .form-check-input:checked:focus::before {
-            content: '';
-        }
-
-        .form-check-input:focus {
-            box-shadow: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/estilosGenericosVal.css">
 </head>
 
 <body>
@@ -132,84 +70,8 @@
     </div>
 </body>
 
-<script>
-    const ventasArray = [
-        { id: '0001', nombreCliente: 'Pepito Perano', fechaVenta: '27/07/2023', montoVenta: '$38000' },
-        { id: '0002', nombreCliente: 'Rosa Maria', fechaVenta: '12/04/2023', montoVenta: '$650000' },
-    ];
-
-    var tablaVentas = document.getElementById('tablaVentas');
-
-    function crearFilaVenta(venta) {
-        var fila = tablaVentas.insertRow();
-
-        var idCell = fila.insertCell(0);
-        var nombreClienteCell = fila.insertCell(1);
-        var fechaVentaCell = fila.insertCell(2);
-        var montoVentaCell = fila.insertCell(3);
-        var accionesCell = fila.insertCell(4);
-
-        idCell.textContent = venta.id;
-        nombreClienteCell.textContent = venta.nombreCliente;
-        fechaVentaCell.textContent = venta.fechaVenta;
-        montoVentaCell.textContent = venta.montoVenta;
-        accionesCell.style.display = 'flex';
-        accionesCell.style.justifyContent = 'center';
-
-        accionesCell.innerHTML = `
-        <button type="button" class="btn" onclick="verMas('${venta.id}')">
-            <img src="img/show.ico" alt="Ver" class="iconos-listar">
-        </button>
-        <div class="form-check form-switch checkeo" style="margin-top: 5px;">
-            <input class="form-check-input" type="checkbox" role="switch" id="switch-${venta.id}"
-                onchange="cambiarEstado('${venta.id}')">
-        </div>`;
-    }
-
-    function llenarTablaVentas() {
-        while (tablaVentas.rows.length > 1) {
-            tablaVentas.deleteRow(1);
-        }
-
-        for (var i = 0; i < ventasArray.length; i++) {
-            var venta = ventasArray[i];
-            crearFilaVenta(venta);
-        }
-    }
-
-    function verMas(id) {
-        var idCodificado = encodeURIComponent(id);
-        window.location.href = `detalleVenta`;
-    }
-
-    llenarTablaVentas();
-
-    function cambiarEstado(ventaId) {
-        var switchElement = document.getElementById(`switch-${ventaId}`);
-
-        if (!switchElement.checked) {
-            document.getElementById('confirmarCambioEstadoBtn').setAttribute('data-venta-id', ventaId);
-
-            $('#confirmarCambioEstadoModal').modal('show');
-        } else {
-            $('#confirmarCambioEstadoModal').modal('show');
-        }
-    }
-
-    document.getElementById('confirmarCambioEstadoBtn').addEventListener('click', function () {
-        var ventaId = this.getAttribute('data-venta-id');
-
-        cambiarEstadoConfirmado(ventaId);
-
-        $('#confirmarCambioEstadoModal').modal('hide');
-    });
-
-    function cambiarEstadoConfirmado(ventaId) {
-      
-        var switchElement = document.getElementById(`switch-${ventaId}`);
-        switchElement.checked = !switchElement.checked;
-    }
-</script>
+<script src="js/ventas.js">
+    
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

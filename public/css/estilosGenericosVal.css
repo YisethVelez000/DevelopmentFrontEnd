@@ -35,6 +35,20 @@
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
+.containerDetalle {
+    width: 720px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#descargarFacturaBtn {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+}
+
 .icons {
     display: flex;
     justify-content: space-around;
@@ -151,7 +165,6 @@
 .fontTtitle {
     font-family: 'Montserrat', sans-serif;
     color: #1f2553;
-    padding-left: 20px;
 }
 
 .row {
@@ -189,7 +202,6 @@
     background-color: #1f2553;
 }
 
-/* Eliminar los estilos en el estado :hover */
 .btnCancelar:hover,
 .btnGuardar:hover,
 .btnLimpiar:hover {
@@ -203,10 +215,9 @@
 
 .textArea {
     display: flex;
-}
-
-textarea {
-    height: 50px;
+    textarea {
+        height: 50px;
+    }
 }
 
 table.table-orientacion .camposListar,
@@ -235,10 +246,118 @@ table.table-orientacion .datosListar {
     margin-left: 10px;
 }
 
+.form-check-input {
+    position: relative;
+    width: 50px;
+    height: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #1f2553;
+    border: 0.5px solid #1f2553;
+    border-radius: 50px;
+    transition: background-color 0.1s, border-color 0.1s;
+}
+
+.form-check-input:checked {
+    background-color: #008000;
+    border-color: green;
+}
+
+.form-check-input::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    left: 2.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.1s;
+}
+
+.form-check-input:checked::before {
+    background-color: #008000;
+}
+
+.form-check-input:checked:focus::before {
+    content: '';
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.factura-container {
+    display: flex;
+    justify-content: center;
+}
+
+.factura {
+    background-color: white;
+    width: 600px;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.module-title {
+    font-weight: bold;
+}
+.module-item{
+    list-style: none;
+}
+.privilege-name{
+    margin-left: 5px;
+}
+.permissions-list {
+list-style-type: none;
+padding-left: 20px;
+}
+
+.privileges-list {
+list-style-type: none;
+padding-left: 20px;
+}
+
+.show-permissions {
+display: block;
+}
+.modulos-link {
+    color: black;
+    font-weight: bold;
+}
+
+.sub-panel {
+    padding-left: 20px; /* Añadir un poco de espacio para la indentación */
+}
+
+.submodule-link {
+    color: #1f2553;
+}
+
+.submodule-link:hover {
+    color: #1f2553;
+}
+
+.permission-label {
+    color: #1f2553;
+    margin-bottom: 10px;
+}
+
 .row {
     margin-left: 10px;
     margin-top: 0;
     padding-top: 0%;
+
 }
 
 .container-fluid {
@@ -255,53 +374,61 @@ table.table-orientacion .datosListar {
 
 /* Estilo para entrada válida */
 .btnInput.valido {
-    border: 3px solid #00b62b;
+    border: 2px solid #00b62b;
 }
 
 /* Estilo para entrada inválida */
 .btnInput.invalido {
-    border: 3px solid #dc3545;
-}         .row {
-    margin-left: 10px;
-    margin-top: 0;
-    padding-top: 0%;
-
+    border: 2px solid #dc3545;
 }
 
-.container-fluid {
-    margin-top: 0;
-    padding-top: 0%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form-check-input::before {
+    background-color: #1f2553;
 }
 
-.row {
-    margin-left: 10px;
-    margin-top: 0;
-    padding-top: 0%;
-
+.accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }
 
-.container-fluid {
-    margin-top: 0;
-    padding-top: 0%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.active, .accordion:hover {
+    background-color: #ccc;
 }
 
-.btnInput {
-    border: 1px solid #ced4da;
+.panel {
+    display: none;
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
 }
 
-/* Estilo para entrada válida */
-.btnInput.valido {
-    border: 3px solid #00b62b;
+.sub-accordion {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }
 
-/* Estilo para entrada inválida */
-.btnInput.invalido {
-    border: 3px solid #dc3545;
+.sub-panel {
+    display: none;
+    padding: 0 18px;
+    background-color: #f1f1f1;
+    overflow: hidden;
 }
 
+.panel {
+    display: none;
+    padding: 0 18px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+                padding-left: 20px;
+
+}
