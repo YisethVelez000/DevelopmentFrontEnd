@@ -194,6 +194,10 @@ app.get('/registrate', (req, res) => {
     res.render('registrate');
 });
 
+app.get('/olvidasteContrasena', (req,res) =>{
+    res.render('olvidasteContrasena');
+})
+
 app.get('*', (req, res) => {
     res.render('404');
 });
