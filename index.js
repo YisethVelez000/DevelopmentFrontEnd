@@ -102,6 +102,9 @@ app.get('/visualizarficha', (req, res) => {
     res.render('visualizarficha');
 });
 
+app.get('/usuarios', (req, res) => {
+    res.render('usuarios');
+});
 app.get('/editarUsuario', (req, res) => {
     res.render('editarUsuario');
 });
@@ -197,6 +200,13 @@ app.get('/registrate', (req, res) => {
 app.get('/olvidasteContrasena', (req,res) =>{
     res.render('olvidasteContrasena');
 })
+app.get('/detalleProduccion', (req,res) =>{
+    res.render('detalleOrdenProduccion');
+});
+
+app.get('/perfil', (req,res) =>{
+    res.render('perfil')
+});
 
 app.get('*', (req, res) => {
     res.render('404');

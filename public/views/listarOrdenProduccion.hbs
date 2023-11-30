@@ -13,22 +13,6 @@
 
 <body>
     {{> header title="Orden de Produccion"}}
-
-    <div class="search">
-
-        <form class="d-flex" role="search">
-            <input class="form-control me-2 campo-search" type="search" placeholder="Buscar" aria-label="Search">
-            <!-- Para modificar el tamaño del logo icono ".icono-search"  y para modificar la orientacion de este ".boton-search" -->
-            <button class="btn btn-outline-secondary boton-search" type="submit"><img src="../img/search.ico"
-                    alt="search" class="icono-search"></button>
-        </form>
-
-    </div>
-
-
-    <div class="">
-        <a href="/ordenProduccion"><button type="button" class="btn btn-light more">+ Agregar</button> </a>
-    </div>
     <div class="container">
 
         <div class="container2">
@@ -37,83 +21,79 @@
             <table class="table table-orientacion m-2">
                 <thead>
                     <tr>
-                        <td scope="col" class="camposListar">ID</td>
-                        <td scope="col" class="camposListar">Nombre Completo</td>
-                        <td scope="col" class="camposListar">Correo Electronico</td>
-                        <td scope="col" class="camposListar">Rol</td>
+                        <td scope="col" class="camposListar">Numero Orden</td>
+                        <td scope="col" class="camposListar">Fecha de Compromiso</td>
                         <td scope="col" class="camposListar">Estado</td>
+                        <td scope="col" class="camposListar text-center">Productos Asociados</td>
                         <td scope="col" class="text-center camposListar">operaciones</td>
-
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row" class="datosListar">0001</th>
-                        <td class="datosListar">Juan Muñoz</td>
-                        <td class="datosListar">juanpislomasfo@gmail.com</td>
-                        <td class="datosListar">Administrador</td>
-                        <td class="datosListar">Activo</td>
-                        <!--BOTONES DE OPERACION-->
-                        <td class="icons">
-
+                        <td class="datosListar">2022-10-15</td>
+                        <td class="datosListar">En progreso</td>
+                        <td class="datosListar text-center">
                             <div>
-                                <button type="button" class="btn"> <a href="/editarProduccion">
-                                        <img src="/img/pencil.ico" class="iconos-listar"></a>
-                                </button>
+                                <a href="/detalleProductosProduccion"><button type="button" class="btn"> <img
+                                            src="/img/show.ico" alt="" class="iconos-listar"></button></a>
+                            </div>
+                        </td>
+                        <td class="icons">
+                            <div>
+                                <button type="button" class="btn"> <img src="/img/pencil.ico" alt=""
+                                        class="iconos-listar"> </button>
                             </div>
 
                             <div>
-                                <button type="button" class="btn"> <img src="/img/show.ico" alt=""
+                                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
                                         class="iconos-listar"> </button>
                             </div>
                         </td>
-                        <!--FIN BOTONES DE OPERACION-->
-
                     </tr>
-
                     <tr>
                         <th scope="row" class="datosListar">0002</th>
-                        <td class="datosListar">Esteban Muñoz</td>
-                        <td class="datosListar">dhejgfy@gmail.com</td>
-                        <td class="datosListar">Cliente</td>
-                        <td class="datosListar">Activo</td>
-                        <!--BOTONES DE OPERACION-->
-                        <td class="icons">
+                        <td class="datosListar">2022-10-20</td>
+                        <td class="datosListar">Completado</td>
+                        <td class="datosListar text-center">
                             <div>
-                                <button type="button" class="btn"> <a href="/editarProduccion">
-                                        <img src="/img/pencil.ico" class="iconos-listar"></a>
-                                </button>
+                                <a href="/detalleProductosProduccion"><button type="button" class="btn"> <img
+                                            src="/img/show.ico" alt="" class="iconos-listar"></button></a>
                             </div>
 
+                        </td>
+                        <td class="icons">
                             <div>
-                                <button type="button" class="btn"> <img src="/img/show.ico" alt=""
+                                <button type="button" class="btn"> <img src="/img/pencil.ico" alt=""
+                                        class="iconos-listar"> </button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
                                         class="iconos-listar"> </button>
                             </div>
                         </td>
-                        <!--FIN BOTONES DE OPERACION-->
                     </tr>
                     <tr>
                         <th scope="row" class="datosListar">0003</th>
-                        <td class="datosListar">Jhon Muñoz</td>
-                        <td class="datosListar">jmuñoz@gmail.com</td>
-                        <td class="datosListar">Cliente</td>
-                        <td class="datosListar">Inactivo</td>
-                        <!--BOTONES DE OPERACION-->
+                        <td class="datosListar">2022-10-25</td>
+                        <td class="datosListar">Pendiente</td>
+                        <td class="datosListar text-center">
+                            <div>
+                                <a href="/detalleProduccion"><button type="button" class="btn"> <img
+                                            src="/img/show.ico" alt="" class="iconos-listar"></button></a>
+                            </div>
+                        </td>
                         <td class="icons">
                             <div>
-                                <button type="button" class="btn"> <a href="/editarProduccion">
-                                        <img src="/img/pencil.ico" class="iconos-listar"></a>
-                                </button>
+                                <button type="button" class="btn"> <img src="/img/pencil.ico" alt=""
+                                        class="iconos-listar"> </button>
                             </div>
-
                             <div>
-                                <button type="button" class="btn"> <img src="/img/show.ico" alt=""
+                                <button type="button" class="btn"> <img src="../img/delete.ico" alt=""
                                         class="iconos-listar"> </button>
                             </div>
                         </td>
-                        <!--FIN BOTONES DE OPERACION-->
                     </tr>
-
                 </tbody>
             </table>
             <nav aria-label="Page navigation example" class="pag">
