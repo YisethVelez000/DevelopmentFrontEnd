@@ -11,29 +11,8 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/public/views/partials');
 
 app.get('/', (req, res) => {
-    res.render('index');
-});
-
-app.get('/pedidos', (req, res) => {
-    res.render('listarPedido');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-app.get('/proveedores', (req, res) => {
-    res.render('proveedores');
-});
-
-app.get('/empleados', (req, res) => {
-    res.render('empleados');
-});
-
-app.get('/fichatecnica', (req, res) => {
-    res.render('fichatecnica');
-});
-
+    res.render('index')//Redireccionar hacia el archivo de hbs
+})
 app.get('/agregarPedido', (req, res) => {
     res.render('agregarPedido')
 })
@@ -108,6 +87,9 @@ app.get('/visualizarficha', (req, res) => {
 
 app.get('/editarUsuario', (req, res) => {
     res.render('editarUsuario');
+});
+app.get('/empleados', (req, res) => {
+    res.render('empleados');
 });
 
 app.get('/estampados', (req, res) => {
@@ -225,6 +207,11 @@ app.get('/visualizarProveedor', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404');
 });
+
+app.get('*', (req, res) => {
+    //res.sendFile(__dirname+'/public/views/404.hbs')
+    res.render('404')//Redireccionar hacia el archivo de blade
+})
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
