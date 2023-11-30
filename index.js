@@ -20,12 +20,6 @@ hbs.registerPartials(__dirname + '/public/views/partials');
 app.get('/', (req, res) => {
     res.render('index')//Redireccionar hacia el archivo de hbs
 })
-
-app.get('*', (req, res) => {
-    //res.sendFile(__dirname+'/public/views/404.hbs')
-    res.render('404')//Redireccionar hacia el archivo de blade
-})
-
 app.get('/agregarPedido', (req, res) => {
     res.render('agregarPedido')
 })
@@ -154,6 +148,11 @@ app.get('/visualizarProveedor', (req, res) => {
     res.render('visualizarProveedor')//Redireccionar hacia el archivo de hbs
 })
 
+
+app.get('*', (req, res) => {
+    //res.sendFile(__dirname+'/public/views/404.hbs')
+    res.render('404')//Redireccionar hacia el archivo de blade
+})
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`)
