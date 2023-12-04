@@ -20,30 +20,56 @@
         <h1 class="m-4">TOBIAS QUINTERO GARCIA</h1>
     </div>
     <div class="container">
-        <form action="/update-profile" method="post">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre completo</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" value="TOBIAS QUINTERO GARCIA" required>
-        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <form action="/update-profile" method="post">
+                    <div class="mb-3">
+                        <strong><label for="nombre" class="form-label">Nombre completo</label></strong>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="TOBIAS QUINTERO GARCIA"
+                            required>
+                    </div>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" value="example@example.com" required>
-        </div>
+                    <div class="mb-3">
+                        <strong><label for="email" class="form-label">Correo electrónico</label></strong>
+                        <input type="email" class="form-control" id="email" name="email" value="example@example.com"
+                            required>
+                    </div>
 
-        <div class="mb-3">
-            <label for="contacto" class="form-label">Teléfono de contacto</label>
-            <input type="tel" class="form-control" id="contacto" name="contacto" value="+57 321 123 4567" required>
-        </div>
+                    <div class="mb-3">
+                        <strong><label for="contacto" class="form-label">Teléfono de contacto</label></strong>
+                        <input type="tel" class="form-control" id="contacto" name="contacto" value="+57 321 123 4567"
+                            required>
+                    </div>
 
-        <div class="mb-3">
-            <label for="direccion" class="form-label">Dirección</label>
-            <textarea class="form-control" id="direccion" name="direccion" rows="3"
-                required>Carrera 24 # 56-78, Medellín, Colombia</textarea>
-        </div>
+                    <div class="mb-3">
+                        <strong><label for="direccion" class="form-label">Dirección</label></strong>
+                        <textarea class="form-control" id="direccion" name="direccion" rows="3"
+                            required>Carrera 24 # 56-78, Medellín, Colombia</textarea>
+                    </div>
 
-        <button type="submit" class="btn btn-primary">Guardar cambios</button>
-        </form>
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                </form>
+            </div>
+            <div class="col-md-6" <form action="/update-password" method="post" id="cambioContrasena">
+                <div class="mb-3">
+                    <strong><label for="password" class="form-label">Contraseña actual</label></strong>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+
+                <div class="mb-3">
+                    <strong><label for="new-password" class="form-label">Nueva contraseña</label></strong>
+                    <input type="password" class="form-control" id="new-password" name="new-password" required>
+                </div>
+
+                <div class="mb-3">
+                    <strong><label for="confirm-password" class="form-label">Confirmar contraseña</label></strong>
+                    <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
+                </form>
+            </div>
+        </div>
     </div>
     {{> footer}}
 </body>
