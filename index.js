@@ -225,7 +225,9 @@ app.get('/detalleProduccion', (req,res) =>{
 app.get('/perfil', (req,res) =>{
     res.render('perfil')
 });
-
+app.get('/login', (req,res) =>{
+    res.render('login')
+});
 app.get('*', (req, res) => {
     res.render('404');
 });
